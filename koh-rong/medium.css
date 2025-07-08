@@ -1,0 +1,1148 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: "Manrope", sans-serif;
+}
+
+.header-bar {
+  display: none;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #373c3d;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+strong {
+    font-weight: 550;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    background-color: #f4f4f4;
+}
+body {
+  scroll-behavior: smooth;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+
+.section {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.section-pad {
+    padding: 60px 0;
+}
+
+h1, h2 {
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* --- Fade Up Animation Styles --- */
+/* Initial state: hidden and slightly below its final position */
+.fade-in-section, .fade-in-item {
+    opacity: 0;
+    transform: translateY(20px); /* Starts 20px below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+    will-change: opacity, transform; /* Optimize for performance */
+}
+
+/* When the 'is-visible' class is added by JavaScript */
+.fade-in-section.is-visible, .fade-in-item.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Moves to its original position */
+}
+
+/* Section 1: Hotel Hero */
+.hero-content {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.hotel-header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #f4f4f4;
+    box-shadow: 1px 1px 5px rgba(102, 102, 102, 0.247);
+    justify-content: center;
+    padding: 15px 0;
+    display: flex;
+    z-index: 20;
+}
+
+.slider-container {
+    margin-top: 55px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.slider img.hotel-main-image {
+    width: 100%;
+    flex-shrink: 0; 
+    object-fit: cover;
+    display: block;
+    height: auto;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 10px; 
+    width: 100%;
+    z-index: 10;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Added width and height transition */
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #f1f1f1;
+    width: 20px;
+    height: 7px;
+    border-radius: 5px;
+}
+
+.back-main {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-image: url("../mobile-image/arrow-prev-svgrepo-com.webp");
+    width: 40px;
+    height: 40px;
+    background-size: 20px ;
+    background-position: left 9px center;
+    background-repeat: no-repeat;
+    z-index: 21;
+    background-color: #eeeeee6c;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    z-index: 2;
+}
+
+
+
+.room-us, .tour-us, .food-us {
+  padding: 20px;
+}
+
+
+
+.food-us img {
+    width: 100%;
+}
+
+.room-img, .exp-img {
+  display: flex;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.room-img img, .exp-img img, .food-img img  {
+  object-fit: cover;
+}
+
+.room-img .privateroom {
+  width: 60%;
+}
+
+.room-img .dormroom {
+  margin-top: 20px;
+  width: 35%;
+  height: 300px;
+}
+
+.exp-img .exp1 {
+  margin-top: 50px;
+  width: 40%;
+  height: 350px;
+}
+
+.exp-img .exp2 {
+  width: 28%;
+  height: 400px;
+}
+
+.exp-img .exp3 {
+  width: 28%;
+  height: 300px;
+}
+
+.food-img {
+  align-items: center;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+}
+
+.food-img .food1 {
+  width: 30%;
+  height: 350px;
+}
+
+.food-img .food2 {
+  width: 35%;
+  height: 350px;
+}
+
+.food-img .food3 {
+  width: 32%;
+  height: 350px;
+}
+
+.room-pv-ds, .tour-pv-ds, .food-pv-ds {
+    text-align: left;
+}
+
+.room-pv-ds h3, .tour-pv-ds h3, .food-pv-ds h3 {
+    padding: 5px 0;
+}
+
+#about-us {
+    padding: 20px 10px;
+
+}
+
+#about-us h2 {
+    padding: 15px 0;
+    margin: 0;
+}
+
+/* Section 3: About Hotel Information */
+#about-us p {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 10px;
+}
+
+.facility {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 0px;
+    padding: 0 10px;
+}
+
+
+
+.facility li {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+.facility h3 {
+    text-align: left;
+    padding: 10px;
+}
+
+.facility img {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+}
+
+.room-image-slider-container {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            /* Ensure dots are positioned relative to this container */
+        }
+
+        .room-image-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .room-image-slider img {
+            width: 100%;
+            flex-shrink: 0;
+            display: block;
+            height: auto;
+        }
+
+/* Section 4 & 5: Room and Experience Display Grid */
+.room-popup, .tour-popup, .food-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f7f4f4;
+    z-index: 1000;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out;
+    display: none;
+  }
+  
+  .popup.active {
+    transform: translateY(0);
+  }
+  
+  .popup.slide-out {
+    transform: translateY(100%);
+  }
+
+
+
+  .close-bg {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f4f4;
+    box-shadow: 1px 1px 5px rgba(77, 77, 77, 0.329);
+    padding: 10px;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+  
+  /* Fixed Close Button */
+
+  .close-rooms, .close-tours, .close-foods {
+    background-image: url("../mobile-image/arrow-prev-svgrepo-com.webp");
+    width: 80px;
+    height: 35px;
+    background-size: 20px ;
+    border: none;
+    background-position: left 2px  center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    padding-left: 5px;
+    font-weight: 600;
+    background-color: #f7f7f7;
+    box-shadow: 1px 1px 5px rgb(219, 219, 219);
+    color: #141414;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .check-room {
+        background-image: url("../mobile-image/search-alt-1-svgrepo-com.webp");
+        background-position: right 5px  center;
+        background-repeat: no-repeat;
+        background-size: 20px ;
+        width: 140px;
+        height: 35px;
+        padding-right: 15px;
+        background-color: #f7f7f7;
+        box-shadow: 1px 1px 5px rgb(219, 219, 219);
+        border: none;
+        border-radius: 5px;
+        color: #141414;
+    }
+
+    .check-room:active {
+        transform: scale(0.9);
+    }
+
+    .check-room p {
+        font-weight: 600;
+    }
+
+
+/* Basic styling for the Discover more button */
+.discover-our-room, .discover-our-tour, .discover-our-food {
+    margin-top: 10px;
+    margin-left: auto;
+    width: 140px;
+    border-radius: 50px;
+    border: 1px solid #4e4e4e;
+    cursor: pointer;
+    color: #4e4e4e;
+    text-decoration: none;
+}
+
+.container-div p {
+    padding: 15px;
+}
+
+.container-div h2 {
+    padding-top: 25px;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.toggle-button {
+    color: #131212;
+    font-weight: 600; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    margin: 0 -0.5rem; /* Negative horizontal margin */
+    border-radius: 0.375rem; /* Rounded corners */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    outline: none; /* Remove outline on focus */
+}
+
+
+/* Modal specific styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.836); /* Semi-transparent black overlay */
+    display: flex; /* Keep this to center content when visible */
+    justify-content: center;
+    align-items: center;
+    z-index: 1002; /* Ensure it's on top */
+
+    opacity: 0;
+    visibility: hidden; /* This makes it non-interactive when hidden */
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out; /* Smooth transition for fade */
+}
+
+/* This class will be added by JavaScript to show the modal */
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    max-width: 40rem; /* Max width for modal content */
+    width: 95svw;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: relative;
+    max-height: 95svh; /* Max height to prevent overflow on smaller screens */
+    overflow-y: auto; /* Enable scrolling if content is too long */
+    /* Add content animation (optional) */
+    transform: translateY(20px); /* Start slightly off-screen */
+    transition: transform 0.3s ease-out; /* Smooth transition for slide */
+}
+
+/* When the modal overlay is visible, animate the content */
+.modal-overlay.visible .modal-content {
+    transform: translateY(0); /* Slide into place */
+}
+
+
+.modal-content p {
+    padding: 10px 15px;
+}
+
+.modal-content h2 {
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.modal-close-button {
+    position: sticky;
+    width: 100%;
+    text-align: right;
+    padding: 0 15px;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 0.86) 74%, rgba(237, 221, 83, 0) 100%);
+    top: 0;
+    border: none;
+    font-size: 3rem; 
+    cursor: pointer;
+    color: #999; 
+    transition: color 0.2s ease-in-out;
+}
+
+
+.room-display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 15px;
+}
+
+.room-display-grid a {
+    text-decoration: none;
+}
+
+.room-box {
+    margin: 0px;
+    overflow: hidden;
+    text-align: left;
+    border-bottom: 1px solid rgb(153, 153, 153);
+    transition: transform 0.3s ease; /* Keep this for hover effect */
+}
+
+
+.room-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.room-box h3 {
+    padding: 0;
+    margin: 15px 0;
+    color: #333;
+}
+
+.room-box p {
+    margin: 15px 0 ;
+    font-size: 0.95em;
+    color: #666;
+}
+
+
+
+
+/* Food */
+
+.food-ds, .tour-ds {
+  padding: 15px;
+}
+
+.food-ds img, .tour-ds img {
+  margin: 15px 0;
+  width: 100%;
+  display: block;
+}
+
+.food-ds h2, .tour-ds h2 {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.food-ds h3 {
+  padding-top: 10px;
+}
+
+.food-ds p, .tour-ds p {
+  padding-bottom: 15px;
+}
+
+.city-tour {
+  margin-top: 50px;
+  background-color: #eff5ee;
+}
+
+.activity-tour {
+  background-color: #f0f1e6;
+}
+
+.city-tour, .activity-tour {
+  border-top: 1px dotted rgb(126, 126, 126);
+  padding: 15px 15px 50px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.temple-tour-ds, .city-tour-ds, .activity-tour-ds {
+  border: 1px dotted rgb(126, 126, 126);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Section 6: Map Location */
+
+#location {
+    max-width: 800px;
+}
+
+.location-info {
+    padding: 0 15px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px; /* Adjust height as needed */
+    display: block; /* Remove extra space below iframe */
+}
+
+
+.contact-dt {
+    padding: 15px;
+    text-align: left;
+}
+
+.contact-dt p {
+    padding-top: 10px ;
+}
+
+.contact-li {
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 20px;
+    border-top: 1px dotted rgb(192, 192, 192);
+}
+
+.contact-li h2 {
+  text-align: center;
+}
+
+.contact-li a {
+    color: #242222;
+}
+.contact-icon {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contact-icon a {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.contact-icon img {
+    width: 30px;
+}
+
+.mobile-book-btn {
+      width: 90% ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(140deg, #19191a 30%, #262727 50%, #19191a 70%);
+      background-size: 400%;
+      backdrop-filter: blur(2px) saturate(100%);
+      -webkit-backdrop-filter: blur(2px) saturate(100%);
+      color: white;
+      border: 1px solid rgba(247, 247, 247, 0.151);
+      padding: 20px 5px;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      cursor: pointer;
+      animation: pulse 2s infinite linear;
+    }
+    .mobile-book-btn img {
+      position: absolute;
+      width: 30px;
+      left: 15px;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    /* Mobile Booking Form */
+    .booking-form-mobile {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 50px 10px 10px 10px;
+      background-color: #ffffffda;
+      backdrop-filter: blur(5px) saturate(100%);
+      -webkit-backdrop-filter: blur(5px) saturate(100%);
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+      z-index: 1001;
+      transition: bottom 0.3s ease-in-out;
+      overflow: auto;
+    }
+
+    /* Booking form header */
+    .booking-form-header {
+      text-align: center !important;
+      margin: 0 auto;
+      padding: 10px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+
+    .booking-form-header h3 {
+      margin: 0 auto;
+      color: #292D32;
+    }
+
+    .back-button {
+      background-image: url("../mobile-image/back-square-svgrepo-com.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      border: none;
+      font-size: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      position: absolute;
+      top: -35px;
+      left: 5px;
+      z-index: 1;
+      background-color: #15161600;
+    }
+
+    /* Active States */
+    .booking-form-mobile.visible {
+      bottom: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: translateX(-50%) scale(1); background-position: 100% 100%;}
+      50% { transform: translateX(-50%) scale(1.05); }
+      100% { transform: translateX(-50%) scale(1); background-position: 0 0;}
+    }
+
+    /* Mobile Form Adjustments */
+    .booking-form-mobile .form-group {
+      margin-bottom: 15px;
+    }
+
+    .booking-form-mobile .custom-dropdown-mobile {
+      width: 100%;
+    }
+
+    .booking-form-mobile input {
+      width: 100%;
+      height: 60px;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid #a8a8a8;
+    }
+
+    /* Mobile calendar styles */
+    .booking-form-mobile .calendar-container {
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%);
+      padding: 10px;
+      width: 100%;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: none;
+      z-index: 1002;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .booking-form-mobile .calendar-container[style*="display: block"] {
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {  transform: translate(-50%, 10%); }
+      to {  transform: translate(-50%, 0%); }
+    }
+
+    .booking-form-mobile .calendar-wrapper {
+      width: 100%;
+    }
+
+    .booking-form-mobile .calendar {
+      width: 100%;
+      padding: 40px 0 0 0;
+    }
+
+    .booking-form-mobile .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0px;
+    }
+
+    .booking-form-mobile .calendar-day-header {
+      text-align: center;
+      font-weight: bold;
+      padding: 0px;
+      font-size: 14px;
+      color: #292c30;
+    }
+
+    .booking-form-mobile .calendar-day {
+      text-align: center;
+      padding: 8px 0px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .booking-form-mobile .calendar-day:hover:not(.disabled) {
+      background-color: #839da3;
+    }
+
+    .booking-form-mobile .calendar-day.disabled {
+      color: #ccc;
+      cursor: default;
+    }
+
+    .booking-form-mobile .calendar-day.today {
+      font-weight: bold;
+      color: #537277;
+      background-color: #e6f7f8;
+    }
+
+    .booking-form-mobile .calendar-day.selected {
+      background-color: #688791;
+      color: white;
+    }
+
+    .booking-form-mobile .calendar-day.in-range {
+      background-color: #e6f6f8;
+    }
+
+    .booking-form-mobile .calendar-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: calc(100% - 20px);
+      left: 10px;
+      top: 10px;
+    }
+
+    .booking-form-mobile .calendar-nav button {
+      background: #dad5bb00;
+      border: none;
+      cursor: pointer;
+    }
+
+    .booking-form-mobile .calendar-nav button img {
+      width: 30px;
+    }
+
+    .booking-form-mobile .calendar-nav button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .booking-form-mobile .calendar-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #364242;
+    }
+
+    /* Mobile dropdown styles */
+    .booking-form-mobile .custom-dropdown-mobile {
+      position: relative;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .booking-form-mobile .dropdown-header {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      padding: 0 5px;
+      border-bottom: 1px solid #a8a8a8;
+      font-size: 16px;
+    }
+
+    .booking-form-mobile .selected-text {
+      color: #777;
+      margin: 0 auto;
+    }
+
+    .dropdown-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgb(77, 77, 77);
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+    .booking-form-mobile .dropdown-arrow {
+      color: #666;
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+
+    .booking-form-mobile .dropdown-options {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow-y: auto;
+      margin: 5px 0 0 0;
+      padding: 5px;
+      list-style: none;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .booking-form-mobile .custom-dropdown-mobile.open .dropdown-options {
+      display: block;
+      animation: floatlist 0.3s ease;
+    }
+
+    @keyframes floatlist {
+      from {
+        transform: translateY(10%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+
+
+    .booking-form-mobile .custom-dropdown-mobile.open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .booking-form-mobile .dropdown-options li {
+      padding: 20px 5px 8px 15px;
+      margin: 0;
+      color: #3f3f3f;
+      transition: all 0.2s;
+    }
+
+    .booking-form-mobile .dropdown-options li:hover {
+      background-color: #f0f8f9;
+    }
+
+    .booking-form-mobile .dropdown-options li.selected {
+      background-color: #e8f5e9;
+      font-weight: bold;
+    }
+
+    /* Submit button */
+    #submitBtnMobile {
+  width: 100%;
+  padding: 12px;
+  background: #8daeb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+#submitBtnMobile:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#submitBtnMobile:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.month-year-selector {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  background: white;
+  padding: 20px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-year-selector select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 33.6%;
+
+    /* --- ADD THESE PROPERTIES FOR IOS COMPATIBILITY --- */
+    -webkit-appearance: none; /* Removes most native styling, including default arrow */
+    -moz-appearance: none;    /* For Firefox */
+    appearance: none;         /* Standard property */
+
+    color: #000; /* Explicitly set text color to black (or your desired color) */
+    background-color: white; /* Ensure background is white and not tinted */
+    /* You might need to add a custom arrow background if you remove native one */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%234A4A4A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Example SVG for a custom down arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Position the arrow */
+    background-size: 16px; /* Size the arrow */
+    padding-right: 30px; /* Add space for the custom arrow */
+}
+
+.month-year-selector select option {
+    color: #000; /* Set the option text color */
+}
+
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.month-year-selector select option.hidden-option {
+    display: none;
+}
+
+.month-year-selector button {
+  width: 30%;
+  padding: 13.5px 30px;
+  background: #8dacb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-form-mobile .calendar-first-month {
+  background-color: #f4f6f7 !important;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.calendar-title {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.date-input {
+  margin: 40px 0;
+  cursor: pointer;
+  background-color: #00000000;
+  border: none;
+  font-weight: 500;
+}
+/* Footer (Basic Styling) */
+footer {
+    background-color: #333;
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+    padding: 10px 0 80px 0;
+    margin-top: 0px;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+}
+
+.loader {
+    margin: 10px auto;
+    border-radius: 10px;
+    background: linear-gradient(140deg, #ebebeb 30%, #ffffff 50%, #ebebeb 70%);
+    background-size: 400%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+      0% { background-position: 100% 100%;}
+      100% {  background-position: 0 0;}
+    }
+
+.loader1 {
+    width: 95%;
+    height: 50svh;
+}
+
+.loader2 {
+    width: 95%;
+    height: 50px;
+}
+
+.loader3 {
+    width: 95%;
+    height: 20px;
+}
+.loader4 {
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    height: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
