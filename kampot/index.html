@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="../mobile-image/logo.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Onederz Kampot - Welcome</title>
+    <link rel="stylesheet" media="screen and (max-width:767px)" href="small.css">
+    <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1199px)" href="medium.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="large.css">
+</head>
+<body>
+<div id="loading-screen">
+        <div class="loader loader2"></div>
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+    </div>
+<main  id="main-content"  style="display: none;">
+    <div class="main-hotel-header"></div>
+    <div class="header-bar mobile-menu" id="mobileMenu">
+        <p class="header-discover" id="amenities-link">Amenities & Services</p>
+        <p class="discover-our-room header-discover">Accommodation</p>
+        <p class="discover-our-tour header-discover">Experiences</p>
+        <p class="discover-our-food header-discover">Eatery</p>
+        <p id="location-link" class="header-discover" data-target="location">Location</p>
+        <p class="header-discover" id="contactTrigger">Contact</p>
+        <p id="good-to-know-link" class="header-discover" data-target="good-to-know">Good to know</p>
+    </div>
+    <!-- Mobile Navigation - Fixed to top right -->
+     <div class="overlay" id="overlay"></div>
+    <nav class="navbar">
+        <div class="bg-bar"></div>
+        <div class="menu-toggle" id="menu" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="hotel-header">
+        <a href="../index.html"><div class="back-main"></div></a>
+        <img src="../mobile-image/onederzlogo.webp" alt="Onederz Logo" class="logo">
+    </div>
+
+    <!-- Main Content -->
+    <div class="first-section">
+        <section id="hotel-hero" class="section">
+            <div class="hero-content">
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="kampot-img/kampot-top-image.webp" alt="Onederz Kampot" class="hotel-main-image" loading="lazy">
+                        <img src="kampot-img/swimming-pool.webp" alt="Onederz Kampot pool" class="hotel-main-image" loading="lazy">
+                        <img src="kampot-img/swimming-pool2.webp" alt="Onederz Kampot" class="hotel-main-image" loading="lazy">
+                        <img src="kampot-img/bar.webp" alt="Onederz Kampot" class="hotel-main-image" loading="lazy">
+                        <img src="kampot-img/commarea.webp" alt="Onederz Kampot" class="hotel-main-image" loading="lazy">
+                        <img src="kampot-img/commarea2.webp" alt="Onederz Kampot" class="hotel-main-image" loading="lazy">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="section fade-in-section">
+            <h2>WELCOME TO <br> ONEDERZ KAMPOT</h2>
+            <p>Located in the heart of Kampot town, Onederz Kampot offers the perfect blend of comfort and social connection. Opened in 2021, our highly-rated hostel features modern, privacy-focused dorms, comfortable private rooms, a large swimming pool, a relaxing garden area, and vibrant common spaces. Situated just minutes from the Old Market and Kampot's famous cafes, we're your ideal base for exploring Bokor Mountain, pepper plantations, the Secret Lake, and the unique charm of this riverside town. We're consistently praised for our friendly staff and great atmosphere.</p>
+        </section>
+    </div>
+
+    <!-- Amenities Section -->
+    <section id="facility" class="section section-pad fade-in-section">
+        <h2>Comfort & Connection</h2>
+        <div class="facility fade-in-item">
+            <div class="accommodation-section">
+                <h3>Your Space</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bunk-hostel-svgrepo-com.webp" alt="">Comfy Dorms</li>
+                    <li><img src="../mobile-image/fac-svg/bed-svgrepo-com.webp" alt="">Private Rooms</li>
+                </ul>
+            </div>
+            <div class="facilities-section">
+                <h3>Hostel Perks</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/swimming-pool-sign-svgrepo-com.webp" alt="">Sparkling Pool</li>
+                    <li><img src="../mobile-image/fac-svg/sofa-svgrepo-com.webp" alt="">Common Areas</li>
+                    <li><img src="../mobile-image/fac-svg/cocktail-svgrepo-com.webp" alt="">Bar & Restaurant</li>
+                    <li><img src="../mobile-image/fac-svg/wifi-svgrepo-com.webp" alt="">Complimentary Wi-Fi</li>
+                </ul>
+            </div>
+            <div class="services-section">
+                <h3>Guest Services</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bell-svgrepo-com.webp" alt="">24/7 Reception</li>
+                    <li><img src="../mobile-image/fac-svg/tour-pin-tear-svgrepo-com.webp" alt="">Tours & Transport</li>
+                    <li><img src="../mobile-image/fac-svg/laundry-service-svgrepo-com.webp" alt="">Laundry Service</li>
+                    <li><img src="../mobile-image/fac-svg/scooter-svgrepo-com.webp" alt="">Scooter Rentals</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms, Experiences, Eatery Sections -->
+    <div class="section-ref">
+        <!-- Rooms Section -->
+        <section id="rooms" class="section section-pad fade-in-section">
+            <div class="room-us fade-in-item">
+                <div class="room-img">
+                    <img src="kampot-img/accmmodation.webp" alt="Private Room" class="privateroom">
+                    <img src="kampot-img/private-room.webp" alt="Dorm Room" class="dormroom pc">
+                </div>
+                <div class="room-pv-ds fade-in-item">
+                    <h3>Sleep & Relax</h3>
+                    <p>Choose from our cozy mixed or female-only dorms featuring privacy curtains, individual power sockets, and reading lights, all with air-conditioning and large secure lockers. Or upgrade to a spacious private room with en-suite bathrooms, air-conditioning, TV, and complimentary toiletries. All options include free high-speed Wi-Fi.</p>
+                </div>
+                <p class="discover-our-room fade-in-item">Discover more</p>
+            </div>
+        </section>
+
+        <!-- Experiences Section -->
+        <section id="experience" class="section section-pad fade-in-section">
+            <div class="tour-us fade-in-item">
+                <div class="exp-img">
+                    <img src="experince/experience.webp" alt="" class="exp1">
+                    <img src="experince/pepper-plantation.webp" alt="Pepper Plantation" class="exp2 pc">
+                </div>
+                <div class="tour-pv-ds fade-in-item">
+                    <h3>Your Journey in Kampot</h3>
+                    <p>Beyond our doors, discover the serene countryside, historic mountains, and vibrant local life of Kampot. From cultural explorations to exciting river adventures, there's always something incredible to experience!</p>
+                </div>
+                <p class="discover-our-tour fade-in-item">Discover more</p>
+            </div>
+        </section>
+
+        <!-- Eatery Section -->
+        <section id="food" class="section section-pad fade-in-section">
+            <div class="food-us fade-in-item">
+                <div class="food-img">
+                    <img src="kampot-img/restaurant.webp" alt="Restaurant" class="food1">
+                    <img src="kampot-img/bar.webp" alt="Bar" class="food2 pc">
+                </div>
+                <div class="food-pv-ds fade-in-item">
+                    <h3>Eat & Drink</h3>
+                    <p>Our poolside restaurant and bar serves a wide variety of delicious and reasonably priced Khmer and Western dishes. Enjoy lively meals and easily connect with fellow travelers in our social space overlooking the pool.</p>
+                </div>
+                <p class="discover-our-food fade-in-item">Discover more</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Location Section -->
+    <section id="location" class="section section-pad fade-in-section">
+        <div class="location-info">
+            <h2>Our Location</h2>
+            <p>Onederz Kampot is conveniently located in the town center, just a 3-minute walk from the Old Market and close to all major attractions. Our address: Street 724, Kampot, Cambodia.</p>
+        </div>
+        <div class="map-container fade-in-item">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d880.5409540341924!2d104.18434205324418!3d10.606272217952771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31083721f1ac83e3%3A0x59fe5a34b00e9759!2sOnederz%20Hostel%20Kampot!5e0!3m2!1sen!2skh!4v1630051466301!5m2!1sen!2skh"  class="location-maps" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-dt fade-in-item">
+
+                <h3>Getting to Onederz Kampot: A Guide for Our Guests</h3>
+                <p>Onederz Kampot is centrally located near the Old Market and riverside, providing easy access to the town's charm and attractions. Here's a detailed guide on how to reach us, whether you're arriving by bus/van or train:</p>
+
+                <div class="accordion">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <span>I. From Bus/Van Stations</span>
+                        <span class="arrow">&#8250;</span>
+                    </div>
+                    <div class="section-content">
+                        <p>Most long-distance buses and minivans will drop you off at or near the main <strong>Kampot Bus Station</strong> or at their specific company offices, which are usually quite central.</p>
+
+                        <h4>From the Main Kampot Bus Station / Central Drop-off Points:</h4>
+                        <ul>
+                            <li><strong>Distance:</strong> Onederz Kampot is typically within 0.5 - 2 kilometers (0.3 - 1.2 miles) from the main bus station or most central minivan drop-off points.</li>
+                            <li><strong>Travel Time:</strong>
+                                <ul>
+                                    <li><strong>Walking:</strong> 5-20 minutes on foot, depending on your exact drop-off location and luggage.</li>
+                                    <li><strong>Tuk-Tuk:</strong> 2-5 minutes.</li>
+                                </ul>
+                            </li>
+                            <li><strong>How to Get Here:</strong>
+                                <ul>
+                                    <li><strong>Walk:</strong> If your luggage is light and the weather is pleasant, walking is a good option.</li>
+                                    <li><strong>Tuk-Tuk:</strong> You will find many tuk-tuks waiting at the bus station and minivan drop-off areas. Agree on a price before starting your journey. It should be around $1 - $2 USD for a short ride to Onederz.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <span>II. From Kampot Train Station</span>
+                        <span class="arrow">&#8250;</span>
+                    </div>
+                    <div class="section-content">
+                        <p>The Kampot Train Station is located a bit outside the town center.</p>
+
+                        <h4>From Kampot Train Station:</h4>
+                        <ul>
+                            <li><strong>Distance:</strong> Onederz Kampot is approximately 3-4 kilometers (1.8 - 2.5 miles) from the Kampot Train Station.</li>
+                            <li><strong>Travel Time:</strong>
+                                <ul>
+                                    <li><strong>Tuk-Tuk:</strong> 7-15 minutes, depending on traffic.</li>
+                                </ul>
+                            </li>
+                            <li><strong>How to Get Here:</strong>
+                                <ul>
+                                    <li><strong>Tuk-Tuk:</strong> This is the most common and convenient way from the train station. You'll find tuk-tuks waiting. Always negotiate the price before you get in. Expect to pay around $3 - $5 USD.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>General Tips for your arrival:</h3>
+                <ul>
+                    <li><strong>Currency:</strong> The local currency is the Cambodian Riel (KHR), but US Dollars (USD) are widely accepted everywhere. ATMs are widely available in Kampot town.</li>
+                    <li><strong>Onederz Contact:</strong> If you encounter any issues or need directions upon arrival, please don't hesitate to call us directly.</li>
+                </ul>
+
+                <p>We look forward to welcoming your guests to Onederz Kampot!</p>
+
+            
+            <div class="contact-li fade-in-item">
+                <h2>Contact Us</h2>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td> : <a href="mailto:onederzkampot@gmail.com">onederzkampot@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td> : <a href="tel:+85598309551">+855 98 309 551</a> , <a href="tel:+855977438468">+855 97 743 8468</a></td>
+                    </tr>
+                </table>
+                <div class="contact-icon">
+                    <a href="https://wa.me/855977438468"  aria-label="Chat on WhatsApp"><img src="../mobile-image/whatsapp.webp" alt=""><p>WhatsApp</p></a>
+                    <a href="https://t.me/onederzkampot" aria-label="Chat on Telegram"><img src="../mobile-image/Telegram.webp" alt=""><p>Telegram</p></a>
+                    <a href="https://m.me/onederzkampot" aria-label="Messenger"><img src="../mobile-image/Messenger.webp" alt=""><p>Messenger</p></a>
+                    <a href="https://web.facebook.com/onederzkampot" aria-label="facebook"><img src="../mobile-image/fb-icon.webp" alt=""><p>Facebook</p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Booking Button -->
+    <div class="main-mobile-book-btn">
+        <button class="mobile-book-btn" id="mobileBookBtn">
+            <img src="../mobile-image/calendar-33-svgrepo-com.webp" alt="">
+            <span>BOOK NOW</span>
+        </button>
+    </div>
+
+    <div class="booking-overlay" id="bookingOverlay"></div>
+  <div class="booking-form-mobile">
+    <div class="booking-form-header">
+      <button class="back-button" id="mobileBackBtn"></button>
+      <h3>Book Your Stay</h3>
+      <p>The best rate guaranteed!! Book directly with us and get the best price now!</p>
+    </div>
+    
+    <form class="search-form" id="searchFormMobile">
+      <div class="form-group">
+        <div class="custom-dropdown custom-dropdown-mobile">
+          <div class="dropdown-header">
+            <span class="selected-text">Onederz Kampot</span>
+            <span class="dropdown-arrow"></span>
+          </div>
+          <ul class="dropdown-options">
+            <li data-value="siem-reap">Onederz Siem Reap</li>
+            <li data-value="phnom-penh">Onederz Phnom Penh</li>
+            <li data-value="kampot">Onederz Kampot</li>
+            <li data-value="sihanoukville">Onederz Sihanoukville</li>
+            <li data-value="koh-rong-sanloem">Onederz Koh Rong Sanloem</li>
+            <li data-value="koh-rong">Onederz Koh Rong</li>
+          </ul>
+          <input type="hidden" id="destination-mobile" name="destination" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="checkin-checkout-mobile" class="date-input" placeholder="Check-in           |           Check-out" readonly>
+        <div class="calendar-container" id="calendarContainerMobile">
+            <div class="month-year-selector" style="display: none;">
+    <select class="month-select">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <select class="year-select">
+      <!-- Years will be populated by JavaScript -->
+    </select>
+    <button class="confirm-month-year">OK</button>
+  </div>
+          <div class="calendar-nav">
+            <button type="button" id="prev-month-mobile" disabled><img src="../mobile-image/arrow-square-left-svgrepo-com.webp" alt="prev"></button>
+            <button type="button" id="next-month-mobile"><img src="../mobile-image/arrow-square-right-svgrepo-com.webp" alt="next"></button>
+          </div>
+          <div class="calendar-wrapper">
+            <div class="calendar" id="calendar-current-mobile">
+
+              <div class="calendar-header">
+                <div class="calendar-title calendar-first-month" id="current-month-title-mobile">June 2023</div>
+              </div>
+              <div class="calendar-grid" id="calendar-days-header-mobile">
+                <div class="calendar-day-header">SU</div>
+                <div class="calendar-day-header">MO</div>
+                <div class="calendar-day-header">TU</div>
+                <div class="calendar-day-header">WE</div>
+                <div class="calendar-day-header">TH</div>
+                <div class="calendar-day-header">FR</div>
+                <div class="calendar-day-header">SA</div>
+              </div>
+              <div class="calendar-grid" id="calendar-current-days-mobile"></div>
+            </div>
+            <div class="calendar" id="calendar-next-mobile">
+              <div class="calendar-header">
+                <div class="calendar-title" id="next-month-title-mobile">July 2023</div>
+              </div>
+              <div class="calendar-grid" id="calendar-days-header-mobile">
+                <div class="calendar-day-header">SU</div>
+                <div class="calendar-day-header">MO</div>
+                <div class="calendar-day-header">TU</div>
+                <div class="calendar-day-header">WE</div>
+                <div class="calendar-day-header">TH</div>
+                <div class="calendar-day-header">FR</div>
+                <div class="calendar-day-header">SA</div>
+              </div>
+              <div class="calendar-grid" id="calendar-next-days-mobile"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" id="submitBtnMobile">CHECK AVAILABILITY</button>
+      </div>
+    </form>
+  </div>
+
+    <!-- Popups (same structure as other properties) -->
+
+<div id="amenitiesModal" class="modal-overlay hidden">
+    <div class="amenities-modal-content">
+        <div class="popup-header">
+            <h2>Comfort & Connection</h2>
+            <span class="amenities-modal-close-button">&times;</span>
+            </div>
+        <div class="facility fade-in-item">
+            <div class="accommodation-section">
+                <h3>Your Space</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bunk-hostel-svgrepo-com.webp" alt="">Comfy Dorms</li>
+                    <li><img src="../mobile-image/fac-svg/bed-svgrepo-com.webp" alt="">Private Rooms</li>
+                </ul>
+            </div>
+            <div class="facilities-section">
+                <h3>Hostel Perks</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/swimming-pool-sign-svgrepo-com.webp" alt="">Sparkling Pool</li>
+                    <li><img src="../mobile-image/fac-svg/sofa-svgrepo-com.webp" alt="">Common Areas</li>
+                    <li><img src="../mobile-image/fac-svg/cocktail-svgrepo-com.webp" alt="">Bar & Restaurant</li>
+                    <li><img src="../mobile-image/fac-svg/wifi-svgrepo-com.webp" alt="">Complimentary Wi-Fi</li>
+                </ul>
+            </div>
+            <div class="services-section">
+                <h3>Guest Services</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bell-svgrepo-com.webp" alt="">24/7 Reception</li>
+                    <li><img src="../mobile-image/fac-svg/tour-pin-tear-svgrepo-com.webp" alt="">Tours & Transport</li>
+                    <li><img src="../mobile-image/fac-svg/laundry-service-svgrepo-com.webp" alt="">Laundry Service</li>
+                    <li><img src="../mobile-image/fac-svg/scooter-svgrepo-com.webp" alt="">Scooter Rentals</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="room-popup popup">
+    <div class="close-bg">
+    <button class="close-rooms">&times;</button>
+    <a href="https://hotels.cloudbeds.com/en/reservation/PeZXom/?currency=usd"><button class="check-room"><p>AVAILABILITY</p></button></a>
+    </div>
+    <div class="room-display-overlay">
+    <div class="container-div">
+        <h2>Dorms & Private Rooms</h2>
+        
+        <p>Whether you're looking to mingle and save, or prefer a tranquil retreat, our accommodations are designed to meet your needs. Our dorm rooms foster a vibrant community feel with cozy, private bunk spaces, while our private rooms offer a personal sanctuary complete with en-suite amenities. Both options prioritize your comfort with quality furnishings and essential features for a memorable stay. 
+            <button id="dormReadMoreBtn" class="toggle-button">Read more...</button>
+        </p>
+    </div>
+    
+    <div class="room-display-grid">
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/double-room.webp" alt="Double Room - Image 1">
+                    <img src="kampot-img/bathroom.webp" alt="">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>Double Room</h3>
+                <p><strong>Perfect for:</strong> Couples or solo travelers</p>
+                <p>A comfortable private room with a double bed, offering a peaceful retreat after exploring Kampot.</p>
+                <p class="room-features">Max People: 2 | Private Bathroom | Free Wifi</p>
+            </div>
+        </div>
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/twin-room.webp" alt="Twin Room - Image 1">
+                    <img src="kampot-img/twin-room2.webp" alt="Twin Room - Image 2">
+                    <img src="kampot-img/bathroom.webp" alt="">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>Twin Room</h3>
+                <p><strong>Perfect for:</strong> Friends traveling together</p>
+                <p>Features two comfortable twin beds, ideal for friends or travel buddies seeking a private space.</p>
+                <p class="room-features">Max People: 2 | Private Bathroom | Free Wifi</p>
+            </div>
+        </div>
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/double-balcany.webp" alt="Double Room with Balcony - Image 1">
+                    <img src="kampot-img/double-balcany2.webp" alt="Double Room with Balcony - Image 2">
+                    <img src="kampot-img/bathroom.webp" alt="">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>Double Room with Balcony</h3>
+                <p><strong>Perfect for:</strong> Enjoying the view</p>
+                <p>Relax in a comfortable double room featuring your own private balcony, perfect for enjoying the Kampot atmosphere.</p>
+                <p class="room-features">Max People: 2 | Private Bathroom | Free Wifi | Balcony</p>
+            </div>
+        </div>
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/family-room.webp" alt="Quadruple Room (Bunk Beds)">
+                    <img src="kampot-img/family-room2.webp" alt="Quadruple Room (Bunk Beds)">
+                    <img src="kampot-img/bathroom.webp" alt="">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>Quadruple Room</h3>
+                <p><strong>Perfect for:</strong> Small groups or families</p>
+                <p>A private room featuring one large bed and two single beds, ideal for groups or families seeking a comfortable and private space during their stay in Kampot.</p>
+                <p class="room-features">Max People: 4 | Private Bathroom | Free Wifi</p>
+            </div>
+        </div>
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/4-bed-dorm.webp" alt="4 Beds Dorm with Private Bathroom - Image 1">
+                    <img src="kampot-img/bed-dorm.webp" alt="4 Beds Dorm with Private Bathroom - Image 2">
+                    <img src="kampot-img/4-bed-dorm2.webp" alt="4 Beds Dorm with Private Bathroom - Image 2">
+                    <img src="kampot-img/4-bed-dorm3.webp" alt="4 Beds Dorm with Private Bathroom - Image 2">
+                    <img src="kampot-img/4-bed-dorm4.webp" alt="4 Beds Dorm with Private Bathroom - Image 2">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>4 Beds Dorm with Private Bathroom</h3>
+                <p><strong>Perfect for:</strong> Intimate connections with extra privacy</p>
+                <p>Our cozy 4-bed dorm with the added convenience of an en-suite private bathroom. Ideal for solo travelers or small groups. <br> *Available as Female Only or Mixed Dorms.*</p>
+                <p class="room-features">Max People: 4 | Private Bathroom | Free Wifi</p>
+            </div>
+        </div>
+
+        <div class="room-box fade-in-item">
+            <div class="room-image-slider-container">
+                <div class="room-image-slider">
+                    <img src="kampot-img/8-bed-dorm.webp" alt="8 Beds Mixed Dorm - Image 1">
+                    <img src="kampot-img/8-bed-dorm2.webp" alt="8 Beds Mixed Dorm - Image 2">
+                </div>
+                <div class="dots-container"></div>
+            </div>
+            <div>
+                <h3>8 Beds Mixed Dorm</h3>
+                <p><strong>Perfect for:</strong> Socializing and meeting new people</p>
+                <p>A lively mixed dorm designed for making new friends and sharing travel stories. Features shared bathrooms located outside the room. <br> *Available as Female Only or Mixed Dorms.*</p>
+                <p class="room-features">Max People: 8 | Shared Bathroom | Free Wifi</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+    <div id="dormInfoModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="modalCloseBtn" class="modal-close-button">&times;</button> 
+            <h2>Dorms: Connect & Unwind</h2>
+
+            <p>We believe a great stay balances privacy with community! Our <strong>dorm rooms</strong> offer both, with <strong>bunk beds designed like cozy boxes</strong> that give you your own private space. Inside, you'll find everything you need: an <strong>electric socket, a reading lamp, and an accessory case</strong>. Even though we're a <strong>budget-friendly accommodation</strong>, we don't compromise on comfort; our <strong>mattresses, blankets, and pillows are as good as those in a hotel</strong>. Plus, all our rooms come with <strong>well-maintained air-conditioners and exhaust fans</strong> to keep you comfortable.</p>
+            <p>To ensure your peaceful sleep isn't disturbed, we've placed our <strong>shared bathrooms conveniently outside the dorm rooms</strong>. This means you can get all the rest you need to wake up refreshed and ready to connect with fellow travelers.</p>
+            <p>Keep your belongings safe and sound in our <strong>large lockers, measuring 40cm x 50cm x 80cm</strong>. We even provide <strong>padlocks</strong> if you don't have your own. So, you'll get two keys when you check in: one for your room door and another for your personal locker. We look forward to welcoming you and helping you make the most of your trip! </p>
+            <br>
+            <br>
+            <h2>Private Room: Your Social Base</h2>
+        
+            <p>Discover the perfect balance of personal space and social opportunity in our <strong>private rooms</strong>. Each room is thoughtfully designed to be your comfortable base, featuring a refreshing <strong>air conditioner</strong> and peace of mind with your own <strong>electronic digital security box</strong>. We've included an <strong>electric kettle</strong> to kickstart your mornings, and <strong>bottles of water</strong> to keep you hydrated. Stay connected with loved ones or plan your next outing using our <strong>free Wifi</strong>, and enjoy the luxury of fresh <strong>towels and more</strong>.</p>
+            <p>Forget shared facilities! You'll love the convenience of your <strong>private bathroom right inside the room</strong>. With a clever <strong>partition wall and curtain separating the shower booth and toilet</strong>, you'll have all the space and privacy needed to get ready for a bustling day of sightseeing or to relax after a fun social evening. </p>
+        </div>
+    </div>
+
+<div class="tour-popup popup">
+    <div class="close-bg">
+        <h2>Experiences</h2>
+        <button class="close-tours">&times;</button>
+    </div>
+    <div class="tour-ds fade-in-item">
+        <div class="temple-tour">
+            <h2>Onederz Kampot - Explore Our Adventures!</h2>
+            <p>Discover the best of Kampot with our curated tours and activities. Whether you're into nature, history, or local culture, we've got something for you!</p>
+
+            <div class="imgtext">
+                <div>
+                    <h3>Our Top Picks:</h3>
+                    <ul>
+                        <li><strong>Countryside Tour:</strong> Salt fields, pepper farms, ancient caves, and a visit to Kep!</li>
+                        <li><strong>Bokor Mountain Tour:</strong> Explore a colonial hill station, abandoned buildings, and waterfalls.</li>
+                        <li><strong>Cooking Class:</strong> Learn to cook 4 delicious Khmer dishes and 1 dessert.</li>
+                        <li><strong>Kayaking Tour:</strong> Paddle through Kampot's serene waterways.</li>
+                        <li><strong>Seafood Cruise:</strong> Enjoy fresh seafood while cruising the river.</li>
+                    </ul>
+                    <p>For all tours, we offer both shared and private transport options to suit your preference and budget. Please inquire at reception for details!</p>
+                </div>
+            </div>
+
+            <h3>Detailed Tour Information:</h3>
+
+            <h4>1. Countryside Tour</h4>
+            <p>Join us to discover the heart of rural Cambodia!</p>
+            <ul>
+                <li><strong>Highlights:</strong>
+                    <ul>
+                        <li><strong>Salt Fields:</strong> See how Kampot's famous salt is harvested.</li>
+                        <li><strong>Broteak Kro La Lake:</strong> A peaceful stop by the lake.</li>
+                        <li><strong>Phnom Chngok Cave:</strong> Explore an ancient cave temple.</li>
+                        <li><strong>Pepper Farm:</strong> Learn about the world-renowned Kampot pepper.</li>
+                        <li><strong>Kep City:</strong> A visit to the charming coastal town.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>2. Bokor Mountain Tour</h4>
+            <p>Step back in time on this fascinating mountain excursion.</p>
+            <ul>
+                <li><strong>Highlights:</strong>
+                    <ul>
+                        <li><strong>Bokor Hill Station:</strong> Explore the historic French colonial ruins.</li>
+                        <li><strong>French Colonial Buildings:</strong> Discover the unique architecture.</li>
+                        <li><strong>Old Casino & Church:</strong> See these intriguing abandoned structures.</li>
+                        <li><strong>Waterfall:</strong> Enjoy the natural beauty of a cascading waterfall.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>3. Cooking Class</h4>
+            <p>A hands-on culinary adventure!</p>
+            <ul>
+                <li><strong>What you'll learn:</strong>
+                    <ul>
+                        <li>Prepare <strong>4 authentic Khmer main dishes</strong>.</li>
+                        <li>Create <strong>1 delicious Cambodian dessert</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>4. Kayaking Tour</h4>
+            <p>Experience Kampot from the water. Perfect for nature lovers!</p>
+
+            <h4>5. Seafood Cruise</h4>
+            <p>Relax and enjoy the river views with delicious fresh seafood.</p>
+
+        </div>
+        <div class="temple-tour-ds">
+            <p><strong>Important Note:</strong> For <strong>daily departure times, current pricing, and to book your spot</strong>, please speak to our friendly reception team. They are happy to help you plan your perfect Kampot adventure!</p>
+        </div>
+    </div>
+</div>    
+
+<div class="food-popup popup">
+    <div class="close-bg">
+        <h2>Eatery</h2>
+        <button class="close-foods">&times;</button>
+    </div>
+    <div class="food-bg"></div>
+    <div class="food-ds fade-in-item">
+        <div class="imgtext-food1">
+            <div class="food-img-cover">
+                <img src="kampot-img/restaurant.webp" alt="restaurant" loading="lazy" class="fade-in-item">
+            </div>
+            <h2>Restaurant & Bar</h2>
+            <p>Located conveniently on the ground floor near the bar, our restaurant and bar at Onederz Kampot offers a fantastic dining experience.</p>
+        </div>
+        <div class="imgtext-food2">
+            <img src="kampot-img/bar.webp" alt="food" loading="lazy" class="food1 fade-in-item">
+            <img src="kampot-img/commarea2.webp" alt="food" loading="lazy" class="food2 fade-in-item">
+        </div>
+        <div class="text-food2">
+            <h3>Open everyday</h3>
+            <h3>From 7:00 AM - 11:00 PM (night)</h3>
+            <p>We're delighted to offer convenient and delicious dining experiences on the Ground Floor near the bar.</p>
+            <h4><strong>Opening Hours & Service</strong></h4>
+            <p>Our kitchens are open every day from 7:00 AM for all-day dining. You can enjoy our full menu, including breakfast, lunch, and dinner, throughout the day. The last food order is at 10:40 PM, and the dining area closes at 11:00 PM (night).</p>
+            <div class="food-bg2"></div>
+            <h4><strong>Your Dining Choices</strong></h4>
+            <p>You'll find a diverse menu to satisfy every craving. We offer a delicious selection of Asian and Western dishes, complemented by refreshing fresh shakes and juices, as well as a wide range of soft drinks, cocktails, beer, and wine. We look forward to serving you!</p>
+            <div class="food-bg3"></div>
+        </div>
+    </div>
+</div>
+    
+<div id="contactModal" class="modal-overlay hidden">
+    <div class="contact-modal-content">
+        <div class="contact-modal-content-wrapper">
+            <div class="popup-header">
+            <h2>Contact us</h2>
+            <span class="contact-modal-close-button">&times;</span>
+            </div>
+            <div class="contact">
+            <table>
+                    <tr>
+                        <td>Email</td>
+                        <td> : <a href="mailto:onederzkampot@gmail.com">onederzkampot@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td> : <a href="tel:+85598309551">+855 98 309 551</a> , <a href="tel:+855977438468">+855 97 743 8468</a></td>
+                    </tr>
+                </table>
+                <div class="contact-icon">
+                    <a href="https://wa.me/855977438468"  aria-label="Chat on WhatsApp"><img src="../mobile-image/whatsapp.webp" alt=""><p>WhatsApp</p></a>
+                    <a href="https://t.me/onederzkampot" aria-label="Chat on Telegram"><img src="../mobile-image/Telegram.webp" alt=""><p>Telegram</p></a>
+                    <a href="https://m.me/onederzkampot" aria-label="Messenger"><img src="../mobile-image/Messenger.webp" alt=""><p>Messenger</p></a>
+                    <a href="https://web.facebook.com/onederzkampot" aria-label="facebook"><img src="../mobile-image/fb-icon.webp" alt=""><p>Facebook</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="locationModal" class="modal-overlay">
+    <div class="location-modal-content">
+        <div class="location-modal-content-wrapper"> 
+            <div class="popup-header">
+            <h2>Our Location</h2>
+            <span class="location-modal-close-button">&times;</span>
+            </div>
+            <div class="location">
+            <p>Onederz Kampot is conveniently located in the town center, just a 3-minute walk from the Old Market and close to all major attractions. Our address: Street 724, Kampot, Cambodia.</p>
+        
+        <div class="map-container fade-in-item">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d880.5409540341924!2d104.18434205324418!3d10.606272217952771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31083721f1ac83e3%3A0x59fe5a34b00e9759!2sOnederz%20Hostel%20Kampot!5e0!3m2!1sen!2skh!4v1630051466301!5m2!1sen!2skh" class="location-maps" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="goodToKnowModal" class="modal-overlay">
+    <div class="good-to-know-modal-content">
+        <div class="good-to-know-modal-content-wrapper">
+            <div class="popup-header">
+                <h2>Good to know</h2>
+                <span class="goodtoknow-modal-close-button">&times;</span>
+            </div>
+            <div class="goodtoknow">
+                <h3>Getting to Onederz Kampot: A Guide for Our Guests</h3>
+                <p>Onederz Kampot is centrally located near the Old Market and riverside, providing easy access to the town's charm and attractions. Here's a detailed guide on how to reach us, whether you're arriving by bus/van or train:</p>
+
+                <div class="accordion">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <span>I. From Bus/Van Stations</span>
+                        <span class="arrow">&#8250;</span>
+                    </div>
+                    <div class="section-content">
+                        <p>Most long-distance buses and minivans will drop you off at or near the main <strong>Kampot Bus Station</strong> or at their specific company offices, which are usually quite central.</p>
+
+                        <h4>From the Main Kampot Bus Station / Central Drop-off Points:</h4>
+                        <ul>
+                            <li><strong>Distance:</strong> Onederz Kampot is typically within 0.5 - 2 kilometers (0.3 - 1.2 miles) from the main bus station or most central minivan drop-off points.</li>
+                            <li><strong>Travel Time:</strong>
+                                <ul>
+                                    <li><strong>Walking:</strong> 5-20 minutes on foot, depending on your exact drop-off location and luggage.</li>
+                                    <li><strong>Tuk-Tuk:</strong> 2-5 minutes.</li>
+                                </ul>
+                            </li>
+                            <li><strong>How to Get Here:</strong>
+                                <ul>
+                                    <li><strong>Walk:</strong> If your luggage is light and the weather is pleasant, walking is a good option.</li>
+                                    <li><strong>Tuk-Tuk:</strong> You will find many tuk-tuks waiting at the bus station and minivan drop-off areas. Agree on a price before starting your journey. It should be around $1 - $2 USD for a short ride to Onederz.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <span>II. From Kampot Train Station</span>
+                        <span class="arrow">&#8250;</span>
+                    </div>
+                    <div class="section-content">
+                        <p>The Kampot Train Station is located a bit outside the town center.</p>
+
+                        <h4>From Kampot Train Station:</h4>
+                        <ul>
+                            <li><strong>Distance:</strong> Onederz Kampot is approximately 3-4 kilometers (1.8 - 2.5 miles) from the Kampot Train Station.</li>
+                            <li><strong>Travel Time:</strong>
+                                <ul>
+                                    <li><strong>Tuk-Tuk:</strong> 7-15 minutes, depending on traffic.</li>
+                                </ul>
+                            </li>
+                            <li><strong>How to Get Here:</strong>
+                                <ul>
+                                    <li><strong>Tuk-Tuk:</strong> This is the most common and convenient way from the train station. You'll find tuk-tuks waiting. Always negotiate the price before you get in. Expect to pay around $3 - $5 USD.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>General Tips for your arrival:</h3>
+                <ul>
+                    <li><strong>Currency:</strong> The local currency is the Cambodian Riel (KHR), but US Dollars (USD) are widely accepted everywhere. ATMs are widely available in Kampot town.</li>
+                    <li><strong>Onederz Contact:</strong> If you encounter any issues or need directions upon arrival, please don't hesitate to call us directly.</li>
+                </ul>
+
+                <p>We look forward to welcoming your guests to Onederz Kampot!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Onederz Kampot. All rights reserved.</p>
+    </footer>
+</main>
+
+<script src="script.js"></script>
+<script src="booking.js"></script>
+<script src="../js/navigation.js"></script>
+<script>
+        window.addEventListener('load', function() {
+    setTimeout(function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
+        
+        loadingScreen.style.opacity = '0';
+        
+        mainContent.style.display = 'block';
+        setTimeout(() => mainContent.classList.add('show'), 10);
+        
+        setTimeout(() => loadingScreen.style.display = 'none', 500);
+    }, 1000);
+});
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) { // Only reload on small screens
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => window.location.reload(), 500);
+    }
+});
+</script>
+</body>
+</html>
