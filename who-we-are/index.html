@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onederz - Who We Are</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@465&family=Montserrat:ital,wght@0,100..900;1,100..900&family=National+Park:wght@200..800&display=swap');
+
+body {
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-size: 0.9em;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: "Montserrat", sans-serif;
+}
+        .navigation-pc {
+  position: absolute;
+  z-index: 10;
+  height: 4em;
+  background-color: #ffffff00;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.navigation-pc a {
+  transition: color 0.3s ease; /* Smooth transition for links */
+}
+
+.navbar {
+  width: 100%;
+  background-color: #46556400;
+  height: 70px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: end;
+  justify-items: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+.navbar-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  z-index: 1001;
+}
+
+.bg-bar {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  right: 0px;
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  background-color: #ffffffb6;
+    backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: #181818;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0px;
+  left: -255px;
+  width: 250px;
+  height: calc(100vh - 0px);
+  background-color: #fffae5de;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.452);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+
+.nav-links {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links.has-dropdown {
+    position: relative;
+    padding-right: 30px !important;
+}
+
+.nav-links.has-dropdown::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s;
+}
+
+.nav-links.has-dropdown.active-dropdown::after,
+.nav-item.active .nav-links.has-dropdown::after {
+    content: '-';
+}
+.nav-menu:not(.active) .nav-links.has-dropdown::after {
+    content: '+' !important;
+}
+
+.nav-links:hover {
+  color: #5f5818;
+  background-color: rgba(194, 182, 182, 0.363);
+}
+
+/* Fixed dropdown styles with proper animation */
+.dropdown-menu {
+  height: 0;
+  width: 100%;
+  background-color: #ac98639f;;
+  list-style: none;
+  padding-left: 20px;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.dropdown-menu.show {
+  height: var(--dropdown-height);
+}
+
+/* Always show dropdown items (remove opacity animation) */
+.dropdown-item {
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.63);
+  /* Remove transform and opacity animations */
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.dropdown-link {
+  padding: 12px 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease-in-out, padding 0.3s ease;
+}
+
+.dropdown-link:hover {
+  color: #000000;
+  padding: 12px 2px 12px 30px;
+}
+
+/* Hamburger animation */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Content shifting */
+.content {
+  margin-top: 70px;
+  padding: 20px;
+  transition: margin-left 0.5s ease;
+}
+
+.content.shifted {
+  margin-left: 200px;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+
+.logo-wd {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: all 0.3s ease;
+  z-index: 101;
+}
+
+
+#logo {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background-image: url("../mobile-image/onederzlogo.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 110px;
+  height: 3em;
+  z-index: 9;
+}
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100svh;
+            background: linear-gradient(rgba(17, 17, 17, 0.555), rgba(0, 0, 0, 0.4)), 
+                        url('../mobile-image/who-we-are.webp') no-repeat bottom left/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* About Sections */
+        .about-section {
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 20px;
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .about-card.visible {
+            opacity: 1;
+        }
+        
+        .about-card:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .about-card:nth-child(odd) .about-text {
+            padding-right: 0;
+            padding-left: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.5s ease-out;
+        }
+        
+        .about-card.visible .about-image {
+            transform: scale(1);
+        }
+        
+        .about-image img {
+            display: block;
+            width: 100%;                                             
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+            transform: translateY(20px);
+            transition: transform 0.6s ease-out;
+        }
+        
+        .about-card.visible .about-text {
+            transform: translateY(0);
+        }
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        /* History Timeline */
+        .history-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            top: 30px;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content p {
+            font-size: 1.1rem;
+        }
+        
+        
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-card, .about-card:nth-child(odd) {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-card:nth-child(odd) .about-text {
+                padding: 20px 0 0 0;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+        <header>
+        <div class="navigation-pc">
+        <div id="navigation-large">
+
+            <a href="../index.html"><div class="logo-wd">
+                <div id="logo"></div>
+            </div></a>
+
+        <nav class="navbar">
+            <div class="bg-bar"></div>
+            <div class="menu-toggle" id="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-links has-dropdown">Destinations</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="../siem-reap/index.html" class="dropdown-link">Siem Reap</a></li>
+                    <li class="dropdown-item"><a href="../phnom-penh/index.html" class="dropdown-link">Phnom Penh</a></li>
+                    <li class="dropdown-item"><a href="../kampot/index.html" class="dropdown-link">Kampot</a></li>
+                    <li class="dropdown-item"><a href="../sihanoukville/index.html" class="dropdown-link">Sihanoukville</a></li>
+                    <li class="dropdown-item"><a href="../koh-rong-sanloem/index.html" class="dropdown-link">Koh Rong Sanloem</a></li>
+                    <li class="dropdown-item"><a href="../koh-rong/index.html" class="dropdown-link">Koh Rong</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="../who-we-are/index.html" class="nav-links">About us</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-links has-dropdown">Experience</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Siem Reap</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Phnom Penh</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-links">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-links has-dropdown">Booking</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Siem Reap</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Phnom Penh</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Kampot</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Sihanoukville</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Koh Rong Sanloem</a></li>
+                    <li class="dropdown-item"><a href="#" class="dropdown-link">Koh Rong</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Who We Are</h1>
+            <p>Creating wonderful travel memories through exceptional Onederz experiences</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Our Philosophy</h2>
+            </div>
+            
+            <!-- Card 1 -->
+            <div class="about-card" id="philosophy-card">
+                <div class="about-image">
+                    <img src="../who-we-are/who-img/goodaccomodate.webp" alt="Onederz common area">
+                </div>
+                <div class="about-text">
+                    <h3>Good accommodation for everyone</h3>
+                    <p>"Saving accommodation cost" and "meeting people from all over the world" would be the reasons you stay at social hotel. However, in exchange for these advantages, you might have bad experience such as sleeping in a harsh environment or taking shower in a dirty bathroom. These problems may affect your trip memory.</p>
+                    <p>Although Onederz is NOT party hotel, we are trying to solve these problems so that everybody can enjoy staying at social hotel. Through providing good accommodation with good price, we will help you to have a wonderful trip memory in Cambodia.</p>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="about-card" id="rooms-card">
+                <div class="about-image">
+                    <img src="../who-we-are/who-img/room.webp" alt="Onederz dorm room">
+                </div>
+                <div class="about-text">
+                    <h3>Our rooms / dorms</h3>
+                    <p>To provide the best sleeping environment is the most important role for us.</p>
+                    <p>We have everything you need in a dorm room such as well maintained airconditioner, fast Wifi, large locker and padlock, strong and big enough bed frame, comfortable mattress and blanket, personal electric socket and reading lamps and daily housekeeping...</p>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="about-card" id="services-card">
+                <div class="about-image">
+                    <img src="../who-we-are/who-img/ourservice.webp" alt="Onederz staff">
+                </div>
+                <div class="about-text">
+                    <h3>Our services</h3>
+                    <p>Although all of our members are working as "one team" to help you to have a good memory both inside and outside the Onederz, you will find that the way each member serve you is not the same. This is because we respect a character and a difference of each member and we also let every member show his or her own hospitality instead of letting everyone work as prescribed in the manual.</p>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="about-card" id="facilities-card">
+                <div class="about-image">
+                    <img src="../who-we-are/who-img/bathroom.webp" alt="Onederz facilities">
+                </div>
+                <div class="about-text">
+                    <h3>Our facilities</h3>
+                    <p>In Onederz, many guests share its facilities. So we design facilities in a social hotel based on this aspect. For example, we believe that "Shared bathrooms should be outside guest rooms so that noise from shared bathrooms will not disturb guests who are sleeping".</p>
+                    <p>We also have our own maintainance team and we check and maintain the condition of facilities everyday.</p>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="about-card" id="rules-card">
+                <div class="about-image">
+                    <img src="../who-we-are/who-img/ourrule.webp" alt="Onederz rules">
+                </div>
+                <div class="about-text">
+                    <h3>Our rules</h3>
+                    <p>Since many guests live together in a social hotel, we have to ask all the guests to respect and follow our simple rules so that everyone can enjoy pleasant environment. For example, guests are not allowed to talk or make a noise in the guest room or the space around the guest room after 10pm. This is to provide good sleeping environment to everyone. Ofcourse, you can enjoy talking in our common space (lounge) 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>One Stop started its journey in Phnom Penh, the capital city of Cambodia, in August 2013.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>One Stop Siem Reap opened in January 2014 near Pub Street.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>One Stop Sihanoukville (changed to Onederz Sihanoukville), our first hostel with swimming pool in beach resort, opened in November 2014.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Onederz opened in Siem Reap with roof top swimming pool in 2016 near Angkor Night Market.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Onederz Phnom Penh opened in 2017 in riverside area.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Onederz Siem Reap won 2 awards (Hoscar) "The best hostel in Cambodia" and "8th best large hostel in the world" from HostelWorld in 2017.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>One Stop Siem Reap won an award (Hoscar) "The best hostel in Cambodia" from HostelWorld in 2018.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Onederz Koh Rong Sanloem opened in 2018.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Onederz Siem Reap won an awards (Hoscar) "7th best large hostel in the world" from HostelWorld in 2019.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for about cards
+            const aboutCards = document.querySelectorAll('.about-card');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const aboutObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            aboutCards.forEach(card => {
+                aboutObserver.observe(card);
+            });
+            
+            // Intersection Observer for timeline items with staggered delay
+            const timelineObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }, index * 150); // Stagger the animation
+                    }
+                });
+            }, observerOptions);
+            
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

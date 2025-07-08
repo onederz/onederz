@@ -1,0 +1,1010 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', Yu Gothic UI, Avenir-Medium;
+}
+.navigation_large {
+    display: none;
+}
+#no_display_mobile{
+    display: none;
+}
+#header{
+    border-radius: 5px;
+    height: 20px;
+    width: 250px;
+    background-color: black;
+}
+.navigation li:hover > a {
+    color:#B0B0B0; text-decoration:none
+}
+li.menu__single ul.menu__second-level a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+li.menu__single_2 ul.menu__second-level a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+li.menu__single_3 ul.menu__second-level a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+a:active {
+    color:black; text-decoration:none
+}
+.bold {
+    font-weight: bold;
+}
+#linebottom {
+    border-bottom: solid black 11px;
+}
+img {
+    width: 100%;
+}
+
+/*MOBILE VIEW*/
+
+#navigation_small {
+    top: 0;
+    width: 100%;
+    height: 3em;
+    position: fixed; 
+    background: rgba(255, 255, 255, 0.808);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    z-index: 5;
+}
+#main_logo_small {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    width: 100px;
+}
+
+#branch_name_small {   
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+}
+#branch_name_small p {
+    padding-top: 13px;
+}
+#menu {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#menu>li {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.781);
+    border-bottom: solid dimgray 1px;
+    
+}
+#menu li a {
+    display: block;
+    text-align: center;
+    font-family: 'Open Sans', Yu Gothic UI, Avenir-Medium;
+    color: white;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+#menu li a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+#whereweare_secondlevel_small {
+    display: none;
+    border-bottom: solid dimgray 1px;
+}
+#whereweare_secondlevel_small li a{
+    color: #000000;
+    display: block;
+    margin-left: -40px;
+    margin-right: 0px;
+    background: rgba(255, 255, 255, 0.808);
+    backdrop-filter: blur(3px) saturate(180%);
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+    
+}
+#contact_secondlevel_small {
+    display: none;
+    border-bottom: solid dimgray 1px;
+}
+#contact_secondlevel_small li a{
+    color: #000000;
+    display: block;
+    margin-left: -40px;
+    margin-right: 0px;
+    background: rgba(255, 255, 255, 0.808);
+    backdrop-filter: blur(3px) saturate(180%);
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+}
+#booking_secondlevel_small {
+    display: none;
+    border-bottom: solid dimgray 1px;
+}
+#booking_secondlevel_small li a{
+    color: black;
+    display: block;
+    margin-left: -40px;
+    margin-right: 0px;
+    background: rgba(255, 255, 255, 0.808);
+    backdrop-filter: blur(3px) saturate(180%);
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+}
+
+/*HUMBURGER ICON*/
+
+#humburger_icon {
+    right: 0;
+    top: 0;
+    display: block;
+    position: fixed;
+    width: 2.5em;
+    margin-top: 0.8em;
+    margin-bottom: 0em;
+    z-index: 1;
+}
+#humburger_icon a {
+    display: block;
+    position: relative;
+    padding: 12px 0 11px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+#humburger_icon:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+    width: 1.5em;
+    height: 20px;
+    margin-top: -10px;
+    background: black;
+}
+#humburger_icon a:before, #humburger_icon a:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 0.5em;
+    width: 1.5em;
+    height: 0.25em;
+    background: rgba(255, 255, 255, 0.936);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+#humburger_icon a:before {
+    margin-top: -6px;
+}
+#humburger_icon a:after {
+    margin-top: 2px;
+}
+
+/*YOU ARE HERE*/
+
+.you-are-here {
+    padding-top: 0.2em;
+    padding-bottom: 0.3em;
+    padding-left: 0.4em;
+    background-color: black;
+    color: white;
+    height: 20px;
+    font-size: 1em;
+    font-family: 'Open Sans', Yu Gothic UI, Avenir-Medium;
+    border-top: 0.1em solid dimgray;
+    border-bottom: 0.1em solid dimgray;
+    display: none;
+}
+.you-are-here a {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+}
+
+/*TOP PHOTO*/
+
+#background {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    font-family: 'Open Sans', Yu Gothic UI, Avenir-Medium;
+    position: relative;
+}
+
+body.on-scroll {
+    overflow: hidden;
+}
+
+#top-page-image {
+    background-repeat: no-repeat;
+    aspect-ratio: 1;
+    position: relative;
+    background-position: center ;
+    background-size: cover;
+    background-image: url("../images/top-page-image2.jpeg");
+}
+
+#hostel_image_2 {
+    display: none;
+}
+
+#top-message {
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+    font-size: 2.2em;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: normal;
+    font-family: 'Open Sans', Yu Gothic UI, Avenir-Medium;
+}
+
+.booking-mobile-btn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    font-weight: bold;
+    position: fixed;
+    z-index: 4000;
+    width: 80%;
+    height: 60px;
+    border-radius: 1rem;
+    background-color: #115561f3;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.712);
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999 !important;
+}
+
+
+/* Form Container style */
+#container-form {
+    width: 100%;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    animation: none; /* Default state */
+    background-color: #d8d8d89f;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+#container-form.show {
+    display: block;
+    animation: move-top 0.5s ease;
+}
+
+@keyframes move-top {
+    from {
+        transform: translateY(500px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes move-bottom {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(600px);
+    }
+}
+
+#container-form.closing {
+    animation: move-bottom 0.5s ease-out;
+    animation-fill-mode: forwards;
+}
+
+ 
+.container-form {
+    padding: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.group {
+    width: 100%;
+}
+.select-hostel {
+    color: #000000;
+    width: 101.1%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.select-date {
+    width: 97.3%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.totalguest {
+    display: none;
+}
+
+#bookingForm {
+    display: block;
+    max-width: 500px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.datepicker {
+    display: block !important;
+}
+
+.booking-tittle {
+    text-align: center;
+    font-size: 15px;
+}
+
+label {
+    display: block;
+  }
+  input::placeholder {
+    color: #dfdfdf;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+  label {
+    display: block;
+  }
+  input::placeholder {
+    color: #dfdfdf;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+  
+  .ifta-label {
+    font-weight: 500;
+    font-size: 12px;
+    color: #074d4d;
+    margin-bottom:-30px;
+    z-index:1;
+    position:relative;
+    padding: 10px 10px 10px 10px;
+    pointer-events:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .ifta-field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer !important;
+    font-size: 15px;
+    border:0;
+    border-radius:6px;
+    padding: 35px 5px 15px 8px;
+    margin: 0px 0px 0px 0px;
+    box-shadow:inset 0 0 0 1px #ccc;
+  }
+
+  .booking-btn {
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    color: white;
+    margin: 9px 0 10px 1px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.555);
+    background-color: #3b6e70;
+    cursor: pointer;
+    font-weight: normal;
+  }
+
+  /* Date picker */
+
+  .calendar-container {
+    display: none; /* Hide by default */
+    position: fixed; /* Position relative to the input container */
+    top: 100%; /* Position below the input field */
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%); /* Remove horizontal centering */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 100%; /* Default width for larger screens */
+    max-width: 600px; /* Ensure it doesn’t overflow the screen */
+    margin-top: -400px;
+}
+@media only screen and (max-width: 600px) {
+    .calendar-container
+    {
+        max-width: 300px; /* Ensure it doesn’t overflow the screen */
+    }
+}
+
+.calendar {
+    margin: 0.1rem;
+    padding: 0.2rem;
+    font-size: 1rem;
+    width: 140%; /* Make each calendar take full width */
+}
+
+/* Header styling */
+.header {
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Position nav buttons relative to header */
+}
+
+/* Navigation buttons styling */
+.nav-buttons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute; /* Position buttons within the header */
+}
+
+.next-month {
+    top: 0.3rem;
+    color: #000000;
+    right: 1rem;
+}
+
+.prev-month {
+    top: 0.3rem;
+    color: #000000;
+    left: 1rem;
+}
+
+/* Weekdays and days styling */
+.weekdays {
+    color: rgb(0, 0, 0);
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+}
+
+.weekdays, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.weekdays div, .days div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.days div.disabled {
+    color: #ccc;
+}
+
+.days div.start-date {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    background-color: #526f91;
+    color: white;
+}
+
+.days div.end-date {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: #526f91;
+    color: white;
+}
+
+.days div.in-range {
+    background-color: #c6e5e9;
+}
+
+.datepicker {
+    display: flex;
+}
+
+/*INTRODUCTION*/ 
+#who_we_are_photo_mobile {
+    width: 100%;
+    background-image: url("../images/img_booking_mobile.jpg");
+    background-size: cover;
+}
+#the-best-hostel-in-cambodia {
+    width: 100%;
+    background-image: url("../images/best-hostel-in-cambodia-2018.jpg");
+    background-size: cover;
+    height: 0;
+}
+#home-3-images-left {
+    width: 100%;
+    background-image: url("../images/onederzsr-facilities.jpg");
+    background-size: cover;
+}
+#whats-new-mobile {
+    width: 100%;
+    background-image: url("../images/8th-best-large-hostel-worldwide.jpg");
+    background-size: cover;
+}
+.where_we_are_text {
+    width: 100%;
+    color: white;
+    max-height: 100%;
+    font-size: 1.2em;
+    text-align: center;
+}
+.where_we_are_text p {
+    width: 100%;
+    margin-bottom: 0;
+}
+#introduction{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/home-message-background.jpg");
+    aspect-ratio: 1.5;
+    background-repeat: no-repeat;
+}
+#introduction_text {
+    width: 100%;
+    height: 100%;
+    background-color: #0000009d;
+    position: absolute;
+}
+#introduction_message {
+    width: 90%;
+    padding: 0.5rem;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    font-size: 1.3em;
+    color: white;
+}
+
+#introduction_photo {
+    width: 100%;
+    overflow: hidden;
+}
+
+.introduction_photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*DESTINATION*/
+
+
+.destination {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.goto-3 {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.width_50or33 {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.5; 
+}
+
+.photo-front-page {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.goto-siemreap {
+    background-image: url("../images/onederzsr-facilities.jpg");
+
+}
+
+.goto-phnompenh {
+    background-image: url("../images/go-to-phnom-penh-square.jpg");
+}
+
+.goto-kampot {
+    background-image: url("../images/go-to-kampot-square.jpg");
+}
+
+.goto-sihanoukville {
+    background-image: url("../images/go-to-sihanoukville.jpg");
+    background-position: center bottom;
+}
+
+.goto-kohrong {
+    background-image: url("../images/go-to-koh-rong-square.jpg");
+    background-position: center bottom;
+}
+
+.goto-kohrong-sanloem {
+    background-image: url("../images/go-to-koh-rong-sanloem-square.jpg");
+}
+
+
+.destination-bg {
+    z-index: 1;
+    height: auto;
+    width: 100%;
+    background-color: #00000000;
+    position: absolute;
+    bottom: 0;
+}
+.destination-discription{
+    width: 100%;
+    height: 100%;
+    font-size: 1.7em;
+}
+.destination-discription p{
+    color: white;
+}
+
+.destination-discription-branch {
+    background-color: #0000006d;
+    padding: 1rem 0rem 1rem 0rem;
+    position: absolute;
+    width: 100%;
+    font-size: 0.9em;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+.destination_discription_message {
+    padding-left: 0.5em;
+    margin-bottom: 0.1em;
+    display: none;
+}
+.textstyle_small_1{
+    text-align: left;
+    height: 70%;
+    font-size: 0.8em;
+    padding-left: 0.7em;
+    padding-bottom: 0.4em;
+    margin-bottom: -0.9em;
+}
+
+.photo50text50_1 {
+    width: 100%;
+    background-color: black;
+    border-top: solid dimgray 1px;
+}
+.destination ul {
+    color: white;
+    font-size: 0.9em;
+    list-style: none;
+    margin-left: -20px;
+}
+.destination li {
+    padding-bottom: 7px;
+}
+
+/*WHO WE ARE*/
+.who-we-are-top-photo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    aspect-ratio: 1.4;
+    background-position: center;
+    position: relative;
+    background-image: url("../images/who-we-are-top-large.jpg");
+}
+
+#who-we-are-image-0 {
+    background-image: url("../images/accomdation.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+#who-we-are-image-1 {
+    background-image: url("../images/room.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+#who-we-are-image-2 {
+    background-image: url("../images/ourservice.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+#who-we-are-image-3 {
+    background-image: url("../images/bathroom.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+#who-we-are-image-4 {
+    background-image: url("../images/lobby.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+#who-we-are-image-5 {
+    background-image: url("../images/building.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+.page-contents {
+    overflow-x: hidden;
+    display: block;
+    align-items: center;
+    transition: opacity 0.5s ease-out; /* Fade-in transition */
+}
+
+.about-img {
+    margin-top: 1rem;
+    width: 100%;
+    transform: translateX(-100px); /* Initial position */
+    transition: transform 0.5s ease-out; /* Move-in transition */
+}
+
+.about-description {
+    padding: 1rem;
+    transform: translateX(100px); /* Initial position */
+    transition: transform 0.5s ease-out; /* Move-in transition */
+    
+}
+.about-description h2 {
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+.about-description p {
+    line-height: 1.7;
+}
+.about-cover {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+#introduction_who_we_are {
+    font-weight: normal;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding-left: 1rem;
+    color: white;
+    font-size: 2rem;
+    background-color: rgba(104, 103, 103, 0.705);
+    width: 100%;
+    overflow: hidden;
+}
+
+.page-contents-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #F1F1F3;
+}
+
+.page-contents-2 {
+    margin-top: 5rem;
+}
+.page-contents-2 h2 {
+    font-weight: normal;
+    margin-top: 1rem;
+    font-size: 1.2em;
+}
+.page-contents-2 p {
+    padding-top: 1rem;
+    line-height: 2;
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 100%;
+    font-size: 1em;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #a7a7a7;
+}
+#footer {
+    display: flex;
+    position: relative;
+    display: block;
+    color: white;
+    height: 800px;
+    background-color: black;
+}
+
+.footerlogo {
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    width: 120px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/onederz-whitelogo.jpg");
+}
+
+.footer-section {
+    display: block;
+}
+
+.phone-des {
+    padding-left: 1rem;
+}
+
+.contact-name {
+    display: none;
+}
+
+.visitonederz {
+    padding: 1.5rem 0 0 2rem;
+}
+.visitonederz-contact {
+    padding: 1.5rem 0 0 0;
+}
+.visitonederz-contact p {
+    margin: 0;
+    line-height: 2;
+    padding-left: 2rem;
+}
+.visitonederz-contact h3 {
+    margin: 0;
+    color: #a7a7a7;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+}
+.visitonederz p {
+    margin: 0;
+    line-height: 2;
+}
+.visitonederz h3 {
+    margin: 0;
+    color: #a7a7a7;
+    padding-bottom: 1rem;
+}
+.visitonederz a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer {
+    height: 120px;
+    position: relative;
+    display: flex;
+}
+
+#go-to-facebook {
+    padding: 0.5rem 0 0 0;
+    font-size: 0.8em;
+    width: 80%;
+    height: 40px;
+}
+#fb_logo {
+    padding: 10px;   
+}
+.fb-logo-img {
+    width: 35px;
+    margin-bottom: -0.8rem;
+}
+#find_us_fb {
+    padding-bottom: 15px;
+    padding-right: 7px;
+    margin-right: 0;
+}
+#go-to-sitemap {
+    display: none;
+    width: 20%;
+    padding: 1rem 0 0 0;
+    font-size: 0.8em;
+    color:white;
+    max-width: 100%;
+    height: 40px;
+}
+#link-to-sitemap {
+    padding: 10px;
+    margin-top: 7px;
+}
+#sitemap {
+    clear: both;
+    list-style: circle;
+    padding-left: 5%;
+    padding-top: 30px;
+}
+#sitemap li {
+    list-style: circle;
+}
+.no-link {
+    pointer-events: none;
+}
+a:link {
+    color:white; text-decoration:none
+}
+a:visited {
+    color:white; text-decoration:none
+}
+a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+.footer a:link {
+    color:black; text-decoration:none
+}
+.footer a:visited {
+    color:black; text-decoration:none
+}
+.footer a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+#sitemap a:link {
+    color:black; text-decoration:none
+}
+#sitemap a:visited {
+    color:black; text-decoration:none
+}
+#sitemap a:hover {
+    color:#B0B0B0; text-decoration:none
+}
+.you-are-here a:link {
+    color:white; text-decoration:none
+}
+.you-are-here a:visited {
+    color:white; text-decoration:none
+}
+.you-are-here a:hover {
+    color:#B0B0B0; text-decoration:none
+}
