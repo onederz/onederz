@@ -1,0 +1,1366 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  font-style: normal;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+.mobile {
+  display: none !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: clip;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #373c3d;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.navigation-pc {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0 20px;
+    box-sizing: border-box; 
+    
+}
+
+/* Navigation Scrolled State - Background Appears */
+.navigation-pc-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 56px;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    box-shadow: none;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 0.493) 0%, rgba(255, 255, 255, 0.466) 51%, rgba(255, 255, 255, 0.322) 74%, rgba(237, 221, 83, 0) 100%);;
+}
+.navigation-pc-bg.scrolled {
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Your existing navigation and dropdown CSS goes here, largely unchanged --- */
+
+/* Navigation List Styling */
+.main-nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-nav ul li:hover > .dropdown-menu,
+.main-nav ul li.active > .dropdown-menu { /* <-- ADD THIS LINE */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.main-nav ul li {
+    position: relative;
+}
+
+/* Styling for main navigation links */
+.main-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter hover for transparent state */
+}
+
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fffffff6;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e1e4d1;
+}
+
+/* Show dropdown on hover */
+.main-nav ul li:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Arrow Styling */
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgb(77, 77, 77);
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.main-nav ul li:hover > .nav-link .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Adjust nav-link hover color for .scrolled state if desired */
+.navigation-pc.scrolled .main-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  z-index: 1001;
+}
+
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+
+
+.main-logo {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1200px;
+  width: 100%;
+  z-index: 101;
+}
+
+
+#logo {
+  background-image: url("../mobile-image/onederzlogo.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 110px;
+  height: 3em;
+
+}
+
+
+@keyframes shimmer {
+  from {
+      background-position: 100% 100%;
+  }
+  to {
+      background-position: 0 0;
+  }
+}
+
+
+
+/* First section is immediately visible */
+#section1 {
+  display: block;
+  align-items: center;
+  height: 100svh;
+  padding: 30px;
+  opacity: 1;
+  transform: translateY(0);
+  border-bottom: none;
+  z-index: 5;
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0.863) 0%, rgba(0, 0, 0, 0.336) 50%, rgba(255, 255, 255, 0) 100%),; 
+}
+
+/* Section5 should always be visible */
+#section5 {
+  width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+
+.section {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  background: #eeeeee00;
+}
+
+
+#section2 {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.section2, .section3 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.section3 {
+  padding: 30px 0 100px 0;
+}
+
+.destination {
+  text-align: center;
+  padding: 40px 5px;
+}
+
+.destination h2 {
+  padding-bottom: 20px;
+}
+
+
+#section3 {
+  position: relative;
+}
+
+
+.onederz-social {
+  width: 100%;
+  padding: 0;
+}
+
+.onederz-social h3 {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgb(35, 39, 39);
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 20px 10px 25px 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.onederz-social h2 {
+  text-align: center;
+  margin-top: 70px;
+}
+
+
+.section2 h1 {
+  cursor: default;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.section2 h1 {
+  color: white;
+}
+
+.section4 p {
+  color: rgb(35, 39, 39);
+  cursor: default;
+  padding: 0 10px;
+  
+}
+
+.section4 h2 {
+  cursor: default;
+  padding: 20px 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.section5 p a {
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+}
+
+.footer-icon {
+  margin-top: 7px;
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+}
+
+.footer-icon:hover {
+  transform: scale(1.1);
+}
+
+.fb-logo {
+  background-image: url("../mobile-image/fb-icon.webp");
+}
+
+.ig-logo {
+  background-image: url("../mobile-image/ig-icon.webp");
+}
+
+#section5 {
+  width: 100%;
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #151616;
+}
+
+.bg-section5 {
+  width: 100%;
+  height: 100%;
+  padding: 50px 70px;
+  max-width: 1200px;
+}
+
+
+.section5 {
+  display: flex;
+  height: 100%;
+  padding: 0px;
+  gap: 80px;
+}
+
+.section5 p {
+  text-align: left;
+  padding: 5px 0;
+  color: rgb(236, 236, 236);
+}
+
+.section5 h2 {
+  padding-top: 20px;
+  color: #f5f1ea;
+}
+
+.character-container {
+    margin: 30px auto;
+    max-width: 1200px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    height: 220px;
+    gap: 0px;
+    box-sizing: border-box;
+}
+
+
+.character-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 180px;
+    position: relative;
+}
+
+/* Specific image styles for each box */
+.sleep {
+    background-image: url("../mobile-image/sleep.webp");
+    background-size: 110px;
+}
+
+.eat {
+    background-image: url("../mobile-image/eat.webp");
+    background-size: 110px;
+}
+
+.drink {
+    background-image: url("../mobile-image/drink.webp");
+    background-size: 70px;
+}
+
+.enjoy {
+    background-image: url("../mobile-image/enjoy.webp");
+    background-size: 120px;
+}
+
+.character-bg {
+    position: absolute;
+    bottom: -10px;
+    text-align: center;
+    width: 100%;
+}
+
+.character-bg p {
+    margin: 0;
+    color: #333;
+    font-weight: 300;
+}
+
+
+/* what we have */
+
+.we-have {
+    padding: 40px 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.we-have-cover {
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  margin: 10px auto;
+  box-shadow: 1px 1px 5px rgba(87, 87, 87, 0.247);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+
+.we-have-cover:hover {
+  transform: scale(1.08) !important;
+}
+
+
+
+.we-have-ds {
+  width: 260px;
+  padding: 2px 10px;
+  text-align: left;
+}
+
+.we-have-ds h3 {
+  width: fit-content;
+  padding: 2px 0 5px 0;
+  margin: 0;
+}
+
+.we-have-img {
+    width: 120px;
+    height: 150px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dc-more,
+.pin,
+.we-have-ds,
+.we-have-img {
+  pointer-events: none;
+}
+
+.pin {
+  top: -10px;
+  right: -5px;
+  position: absolute;
+  background-image: url("../mobile-image/Pin-Transparent-Clip-Art-Image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 60px;
+}
+
+.dc-more {
+  font-size: 0.85em;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid #666;
+  padding: 2px 10px;
+  color: #666;
+}
+
+.accommodation {
+  background-image: url("../mobile-image/room.webp");
+}
+
+.tour-actvity {
+  background-image: url("../mobile-image/pub-crawl.webp");
+}
+
+.fooddrink {
+  background-image: url("../mobile-image/food.webp");
+}
+
+.busticket {
+  background-image: url("../mobile-image/service.webp");
+}
+
+
+.box-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 5px;
+}
+
+
+/* --- Keep your .box-container and .box styles as they are, but remove scale from .box --- */
+.box-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5px;
+}
+
+.box {
+    width: 300px;
+    cursor: pointer;
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px rgba(87, 87, 87, 0.452);
+}
+
+/* --- Modify .box-img for scaling and transition --- */
+.box-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Add transition for scale and ensure initial scale is 1 */
+    transition: transform 0.5s ease; /* Use transform for scaling */
+    transform: scale(1); /* Ensure it starts at normal size */
+}
+
+/* --- Add hover effect directly to .box-img when .box is hovered --- */
+.box:hover .box-img {
+    transform: scale(1.1); /* Scale the image up by 5% on hover */
+}
+
+
+/* --- Keep your individual box background images --- */
+.box1 {
+    background-image: url("../mobile-image/go-to-siemreap-square.webp");
+}
+
+.box2 {
+    background-image: url("../mobile-image/go-to-phnom-penh-square.webp");
+}
+
+.box3 {
+    background-image: url("../mobile-image/go-to-kampot-square.webp");
+}
+
+.box4 {
+    background-image: url("../mobile-image/go-to-sihanoukville.webp");
+}
+
+.box5 {
+    background-image: url("../mobile-image/go-to-koh-rong-sanloem-square.webp");
+}
+
+.box6 {
+    background-image: url("../mobile-image/go-to-koh-rong-square.webp");
+}
+
+/* --- Keep your .descripe-box styles --- */
+.box .descripe-box {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: #f4f4f4;
+}
+
+.descripe-box h3 {
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.descripe-box p {
+    font-weight: 400;
+    font-size: 0.55em;
+    padding: 1px 0;
+    color: #919191;
+}
+
+.booking-form {
+  display: none;
+}
+
+
+
+
+.date-input {
+  margin: 40px 0;
+  cursor: pointer;
+  background-color: #00000000;
+  border: none;
+  font-weight: 500;
+}
+
+.top-page-bg {
+  top: 0;
+  left: 0;
+  background-image: url("../images/top-page-image-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+  /* This line makes the background fixed */
+  background-attachment: fixed; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.top-page-title {
+  top: 40%;
+  position: sticky;
+  margin: 0 auto;
+  z-index: 2;
+  width: 100%;
+}
+
+.top-page-title h1 {
+  text-align: center;
+  cursor: default;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.247);
+  font-size: 5.5em;
+  font-weight: 600;
+}
+
+#section4 {
+  position: relative;
+  color: rgb(35, 39, 39);
+  border-bottom: none;
+  display: block;
+  z-index: 2;
+  text-align: center;
+}
+
+.bg-section4 {
+  padding: 0px 0 50px 0;
+}
+
+.rate-guarantee-cover {
+  max-width: 1200px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: end;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  transition: opacity 0.5s ease-out;
+  z-index: 1;
+}
+#rate-guarantee-popup {
+    top: 60px; /* Adjust vertical position as needed */
+    right: 0;
+    transform: translateX(0%); /* Centers the popup horizontally */
+    background-color: #f3e8cf; /* A warm, inviting color */
+    color: #333;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.05em;
+    font-weight: bold;
+    z-index: 2000; /* Ensure it's above everything else */
+    max-width: 90%; /* Responsive width */
+    width: 400px; /* Max width for desktop */
+    opacity: 1; /* Initially visible */
+    line-height: 1.4;
+}
+
+#rate-guarantee-popup::before {
+    content: '';
+    position: absolute;
+    /* --- CHANGES START HERE --- */
+    top: -10px; /* Position 10px above the top edge of the popup */
+    left: 90%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f3e8cf;
+    z-index: -1;
+}
+
+.main-mobile-book-btn {
+  position: fixed;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: end;
+}
+
+.mobile-book-btn {
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(140deg, #19191a 30%, #262727 50%, #19191a 70%);
+      background-size: 400%;
+      backdrop-filter: blur(2px) saturate(100%);
+      -webkit-backdrop-filter: blur(2px) saturate(100%);
+      color: white;
+      border: 1px solid rgba(247, 247, 247, 0.151);
+      padding: 10px 0px 10px 30px;
+      font-weight: 400;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      animation: pulse 2s infinite linear;
+      border-radius: 3px;
+    }
+
+    .mobile-book-btn img {
+      position: absolute;
+      width: 25px;
+      left: 7px;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    #bookingOverlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Ensure it's on top of other content */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    
+}
+
+/* bookingOverlay visible state */
+#bookingOverlay.visible {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Fully visible */
+}
+
+    /* Mobile Booking Form */
+    .booking-form-mobile {
+      position: fixed;
+      bottom: -100%;
+      right: 0;
+      width: 500px;
+      height: 100%;
+      padding: 50px 10px 10px 10px;
+      background-color: #fffffff3;
+      backdrop-filter: blur(5px) saturate(100%);
+      -webkit-backdrop-filter: blur(5px) saturate(100%);
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+      z-index: 1001;
+      transition: bottom 0.3s ease-in-out;
+    }
+
+    /* Booking form header */
+    .booking-form-header {
+      text-align: center;
+      margin: 0 auto;
+      padding: 10px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+
+    .booking-form-header h3 {
+      margin: 0 auto;
+      color: #292D32;
+    }
+
+    .back-button {
+      background-image: url("../mobile-image/close-square-svgrepo-com.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      border: none;
+      font-size: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      position: absolute;
+      top: -35px;
+      left: 5px;
+      z-index: 1;
+      background-color: #15161600;
+    }
+
+    /* Active States */
+    .booking-form-mobile.visible {
+      bottom: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform:  scale(1); background-position: 100% 100%;}
+      50% { transform:  scale(1.05); }
+      100% { transform:  scale(1); background-position: 0 0;}
+    }
+
+    /* Mobile Form Adjustments */
+    .booking-form-mobile .form-group {
+      margin-bottom: 15px;
+    }
+
+    .booking-form-mobile .custom-dropdown-mobile {
+      width: 100%;
+    }
+
+    .booking-form-mobile input {
+      width: 100%;
+      height: 60px;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid #a8a8a8;
+    }
+
+    /* Mobile calendar styles */
+    .booking-form-mobile .calendar-container {
+      position: fixed;
+      top: 20px;
+      left: -85%;
+      padding: 10px;
+      width: 380px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: none;
+      z-index: 1002;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .booking-form-mobile .calendar-container[style*="display: block"] {
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {  transform: scale(0) translateX(500px); }
+      to {  transform: scale(1); }
+    }
+
+    .booking-form-mobile .calendar-wrapper {
+      width: 100%;
+    }
+
+    .booking-form-mobile .calendar {
+      width: 100%;
+      padding: 40px 0 0 0;
+    }
+
+    .booking-form-mobile .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0px;
+    }
+
+    .booking-form-mobile .calendar-day-header {
+      text-align: center;
+      font-weight: bold;
+      padding: 0px;
+      font-size: 14px;
+      color: #292c30;
+    }
+
+    .booking-form-mobile .calendar-day {
+      text-align: center;
+      padding: 8px 0px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .booking-form-mobile .calendar-day:hover:not(.disabled) {
+      background-color: #839da3;
+    }
+
+    .booking-form-mobile .calendar-day.disabled {
+      color: #ccc;
+      cursor: default;
+    }
+
+    .booking-form-mobile .calendar-day.today {
+      font-weight: bold;
+      color: #537277;
+      background-color: #e6f7f8;
+    }
+
+    .booking-form-mobile .calendar-day.selected {
+      background-color: #688791;
+      color: white;
+    }
+
+    .booking-form-mobile .calendar-day.in-range {
+      background-color: #e6f6f8;
+    }
+
+    .booking-form-mobile .calendar-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: calc(100% - 20px);
+      left: 10px;
+      top: 10px;
+    }
+
+    .booking-form-mobile .calendar-nav button {
+      background: #dad5bb00;
+      border: none;
+      cursor: pointer;
+    }
+
+    .booking-form-mobile .calendar-nav button img {
+      width: 30px;
+    }
+
+    .booking-form-mobile .calendar-nav button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .booking-form-mobile .calendar-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #364242;
+    }
+
+    /* Mobile dropdown styles */
+    .booking-form-mobile .custom-dropdown-mobile {
+      position: relative;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .booking-form-mobile .dropdown-header {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      padding: 0 5px;
+      border-bottom: 1px solid #a8a8a8;
+      font-size: 16px;
+    }
+
+    .booking-form-mobile .selected-text {
+      color: #777;
+      margin: 0 auto;
+    }
+
+    .booking-form-mobile .dropdown-arrow {
+      color: #666;
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+
+    .booking-form-mobile .dropdown-options {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow-y: auto;
+      margin: 5px 0 0 0;
+      padding: 5px;
+      list-style: none;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+
+    .booking-form-mobile .custom-dropdown-mobile.open .dropdown-options {
+      display: block;
+    }
+
+    .booking-form-mobile .custom-dropdown-mobile.open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .booking-form-mobile .dropdown-options li {
+      padding: 15px 5px 15px 15px;
+      margin: 0;
+      color: #3f3f3f;
+      transition: all 0.2s;
+    }
+
+    .booking-form-mobile .dropdown-options li:hover {
+      background-color: #f9f8f0;
+    }
+
+    .booking-form-mobile .dropdown-options li.selected {
+      background-color: #f9f8f0;
+      font-weight: bold;
+    }
+
+    /* Submit button */
+    #submitBtnMobile {
+  width: 100%;
+  padding: 12px;
+  background: #8daeb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+#submitBtnMobile:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#submitBtnMobile:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.month-year-selector {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  background: white;
+  padding: 20px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-year-selector select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 33.6%;
+
+    /* --- ADD THESE PROPERTIES FOR IOS COMPATIBILITY --- */
+    -webkit-appearance: none; /* Removes most native styling, including default arrow */
+    -moz-appearance: none;    /* For Firefox */
+    appearance: none;         /* Standard property */
+
+    color: #000; /* Explicitly set text color to black (or your desired color) */
+    background-color: white; /* Ensure background is white and not tinted */
+    /* You might need to add a custom arrow background if you remove native one */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%234A4A4A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Example SVG for a custom down arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Position the arrow */
+    background-size: 16px; /* Size the arrow */
+    padding-right: 30px; /* Add space for the custom arrow */
+}
+
+.month-year-selector select option {
+    color: #000; /* Set the option text color */
+}
+
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.month-year-selector select option.hidden-option {
+    display: none;
+}
+
+.month-year-selector button {
+  width: 30%;
+  padding: 13.5px 30px;
+  background: #8dacb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-form-mobile .calendar-first-month {
+  background-color: #f4f6f7 !important;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.calendar-title {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+
+#contact-form {
+    z-index: 4;
+    padding: 1rem;
+    width: 350px;
+    position: fixed;
+    right: 0.5em;
+    bottom: 0.5em;
+    background: linear-gradient(74deg, rgba(207, 207, 207, 0.877) 0%, rgba(218, 218, 218, 0.705) 100%);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    height: 410px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Start fully transparent */
+    visibility: hidden; /* Hide the element */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+}
+
+#contact-form.visible {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Show the element */
+    transform: translateX(0); /* Slide into view */
+}
+
+
+.contact-send {
+    left: 1em;
+    z-index: 1;
+    position: absolute;
+    bottom: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+    color: #f0f0f0;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.753);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-send:hover {
+    color: rgb(255, 255, 255);
+    background: rgba(3, 114, 77, 0.89);
+    transform: scale(1.1);
+}
+
+.contact-send:active {
+    transform: scale(0.98);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+#contact-form input {
+    border: none;
+    padding-left: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+    margin-bottom: 1rem;
+}
+
+#contact-form input:focus {
+    outline:none;
+    box-shadow:inset 0 0 0 2px #007bff00;
+}
+
+#contact-form textarea {
+    outline:none;
+    box-shadow:inset 0 0 0 2px #007bff00;
+}
+
+textarea::placeholder {
+    color: #d1d1d1; /* Change this to your desired color */
+    opacity: 1; /* Ensure the color is fully visible */
+  }
+
+#close-form {
+    right: -0.2em;
+    z-index: 1;
+    position: absolute;
+    top: -0.2em;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgb(24, 24, 24);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#close-form:hover {
+    background: rgb(158, 8, 8);
+    transform: scale(1.2);
+}
+
+#close-form:active {
+    transform: scale(0.98);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+#contact-form textarea {
+    border-radius: 5px;
+    padding: 10px;
+    width: 320px;
+    height: 200px;
+    border: none;
+}
+
+
+#main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+#main-content.show {
+    opacity: 1;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader {
+    margin: 10px auto;
+    border-radius: 10px;
+    background: linear-gradient(140deg, #ebebeb 30%, #ffffff 50%, #ebebeb 70%);
+    background-size: 400%;
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+      0% { background-position: 100% 100%;}
+      100% {  background-position: 0 0;}
+    }
+
+.loader1 {
+    width: 95%;
+    height: 50svh;
+}
+
+.loader2 {
+    width: 95%;
+    height: 50px;
+}
+
+.loader3 {
+    width: 95%;
+    height: 20px;
+}
+.loader4 {
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    height: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
