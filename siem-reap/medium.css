@@ -8,9 +8,6 @@ select {
   font-family: "Manrope", sans-serif;
 }
 
-.header-bar {
-  display: none;
-}
 
 h2 {
   font-size: 1.4em;
@@ -34,6 +31,15 @@ strong {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+    outline: none;
+  &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 html {
@@ -46,6 +52,102 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
 }
+
+.navbar {
+        position: fixed;
+        top: 22px;
+        right: 20px;
+        z-index: 1000;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        .menu-toggle {
+        cursor: pointer;
+         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        z-index: 1001;
+
+          }
+
+        .bar {
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            border-radius: 20px;
+            position: fixed;
+            top: 70px;
+            left: 100%;
+            width: 100%;
+            max-width: 300px;
+            height: calc(auto - 70px);
+            color: white;
+            transform: translate(100%);
+            transition: transform 0.3s ease-out;
+            z-index: 1001;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(-100%);
+        }
+
+        .mobile-menu p {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: background-color 0.2s ease;
+            border-radius: 10px;
+            
+            margin: 5px 0;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.473);
+            box-shadow:
+                1px 1px 2px rgba(0, 0, 0, 0.1),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            isolation: isolate;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-menu .header-discover:last-child {
+            border-bottom: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.541); /* Semi-transparent black */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000; /* Below menu, above content */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
 
 .section {
@@ -79,29 +181,47 @@ h1, h2 {
     transform: translateY(0); /* Moves to its original position */
 }
 
+
 /* Section 1: Hotel Hero */
+#hotel-hero {
+  margin-top: 80px;
+}
 .hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width: 100%;
-    margin: 0 auto;
+    margin: 0px auto;
     overflow: hidden;
     position: relative;
 }
 
 .hotel-header {
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    background-color: #f4f4f4;
-    box-shadow: 1px 1px 5px rgba(102, 102, 102, 0.247);
+  border-radius: 10px;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  height: 60px;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.473);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
     justify-content: center;
     padding: 15px 0;
     display: flex;
     z-index: 20;
 }
 
+
+
 .slider-container {
-    margin-top: 55px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -110,21 +230,26 @@ h1, h2 {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out; 
+    margin-bottom: 20px;
 }
 
 .slider img.hotel-main-image {
+    scale: 0.95;
+    aspect-ratio: 1.5;
     width: 100%;
     flex-shrink: 0; 
     object-fit: cover;
     display: block;
     height: auto;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.055);
+    border-radius: 10px;
 }
 
 .dots-container {
     text-align: center;
     padding: 1px 0;
     position: absolute;
-    bottom: 10px; 
+    bottom: 40px; 
     width: 100%;
     z-index: 10;
 }
@@ -170,16 +295,17 @@ h1, h2 {
     z-index: 2;
 }
 
-
-
 .room-us, .tour-us, .food-us {
-  padding: 20px;
+    margin: auto 15px;
+    background-color: #f3f3f3;
+    padding: 10px 10px 20px 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.055);
+    border-radius: 10px;
 }
 
-
-
-.food-us img {
+.room-us img, .tour-us img, .food-us img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .room-img, .exp-img {
@@ -250,46 +376,59 @@ h1, h2 {
 
 #about-us {
     padding: 20px 10px;
-
 }
 
 #about-us h2 {
-    padding: 15px 0;
+    padding: 10px 0;
     margin: 0;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.055);
 }
 
 /* Section 3: About Hotel Information */
 #about-us p {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 10px auto;
     text-align: left;
     padding: 10px;
 }
 
 .facility {
-    max-width: 800px;
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-between;
-    gap: 0px;
-    padding: 0 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.facility > * {
+  width: 50%;
 }
 
 
 
-.facility li {
+.modal-content .facility li{
     display: flex;
     gap: 10px;
     text-decoration: none;
     text-align: left;
-    padding-left: 10px;
+    padding: 0px 15px;
+}
 
+.modal-content .facility h3 {
+  padding: 15px;
+}
+
+.facility li,.facility h3{
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    text-align: left;
+    padding: 0px 25px;
 }
 
 .facility h3 {
-    text-align: left;
-    padding: 10px;
+    padding: 10px 25px;
 }
 
 .facility img {
@@ -311,11 +450,38 @@ h1, h2 {
         }
 
         .room-image-slider img {
+          border-radius: 10px;
             width: 100%;
             flex-shrink: 0;
             display: block;
             height: auto;
         }
+.room-image-slider-container .dots-container {
+    text-align: center;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 10px; 
+    width: 100%;
+    z-index: 10;
+}
+
+.room-image-slider-container .dot {
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: #ececec;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Added width and height transition */
+    cursor: pointer;
+}
+
+.room-image-slider-container .dot.active {
+    background-color: #ececec;
+    width: 20px;
+    height: 7px;
+    border-radius: 5px;
+}
 
 /* Section 4 & 5: Room and Experience Display Grid */
 .room-popup, .tour-popup, .food-popup {
@@ -324,7 +490,9 @@ h1, h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f7f4f4;
+    background-color: rgba(156, 156, 156, 0.452);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 1000;
     overflow-y: auto;
     transform: translateY(100%);
@@ -343,41 +511,39 @@ h1, h2 {
 
 
   .close-bg {
+    margin: 0 auto;
     position: sticky;
     display: flex;
     justify-content: space-between;
-    background-color: #f7f4f4;
-    box-shadow: 1px 1px 5px rgba(77, 77, 77, 0.329);
     padding: 10px;
     top: 0px;
     left: 0;
     width: 100%;
+    max-width: 800px;
     z-index: 1001;
+  }
+
+  .close-bg h2 {
+    margin: 0;
+    color: white;
+    padding: 3px 15px 0px 15px;
+    background-color: rgba(53, 51, 51, 0.918);
+    border-radius: 10px;
   }
   
   /* Fixed Close Button */
 
   .close-rooms, .close-tours, .close-foods {
-    background-image: url("../mobile-image/arrow-prev-svgrepo-com.webp");
-    width: 80px;
-    height: 35px;
-    background-size: 20px ;
-    border: none;
-    background-position: left 2px  center;
-    background-repeat: no-repeat;
-    z-index: 2;
-    padding-left: 5px;
-    font-weight: 600;
-    background-color: #f7f7f7;
-    box-shadow: 1px 1px 5px rgb(219, 219, 219);
-    color: #141414;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        font-size: 1.5em;
+        padding: 0px 15px 0px 15px;
+        background-color: rgba(53, 51, 51, 0.918);
+        border-radius: 10px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.11);
     }
 
     .check-room {
+        font-size: 1em;
         background-image: url("../mobile-image/search-alt-1-svgrepo-com.webp");
         background-position: right 5px  center;
         background-repeat: no-repeat;
@@ -388,7 +554,7 @@ h1, h2 {
         background-color: #f7f7f7;
         box-shadow: 1px 1px 5px rgb(219, 219, 219);
         border: none;
-        border-radius: 5px;
+        border-radius: 10px;
         color: #141414;
     }
 
@@ -401,118 +567,270 @@ h1, h2 {
     }
 
 
-/* Basic styling for the Discover more button */
 .discover-our-room, .discover-our-tour, .discover-our-food {
     margin-top: 10px;
     margin-left: auto;
     width: 140px;
     border-radius: 50px;
-    border: 1px solid #4e4e4e;
+    border: 1px solid #4e4e4e1c;
     cursor: pointer;
     color: #4e4e4e;
     text-decoration: none;
 }
 
 .container-div p {
-    padding: 15px;
+    padding: 10px 0px;
 }
 
 .container-div h2 {
-    padding-top: 25px;
     font-weight: 500;
     margin-bottom: 0;
     text-align: center;
 }
 
 .toggle-button {
-    color: #131212;
-    font-weight: 600; 
+    color: #b3acac;
+    font-size: 0.9em;
+    font-weight: 500; 
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.25rem 0.5rem;
-    margin: 0 -0.5rem; /* Negative horizontal margin */
-    border-radius: 0.375rem; /* Rounded corners */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-    outline: none; /* Remove outline on focus */
+    margin: 0 -0.5rem; 
+    border-radius: 0.375rem; 
+    transition: all 0.3s ease-in-out;
+    outline: none;
 }
 
-
-/* Modal specific styles */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.836); /* Semi-transparent black overlay */
-    display: flex; /* Keep this to center content when visible */
+    background-color: rgba(156, 156, 156, 0.452);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex; 
     justify-content: center;
     align-items: center;
-    z-index: 1002; /* Ensure it's on top */
+    z-index: 1002;
 
     opacity: 0;
-    visibility: hidden; /* This makes it non-interactive when hidden */
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out; /* Smooth transition for fade */
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-/* This class will be added by JavaScript to show the modal */
+
 .modal-overlay.visible {
     opacity: 1;
     visibility: visible;
 }
 
 .modal-content {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding-bottom: 20px;
-    max-width: 40rem; /* Max width for modal content */
-    width: 95svw;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    position: relative;
-    max-height: 95svh; /* Max height to prevent overflow on smaller screens */
-    overflow-y: auto; /* Enable scrolling if content is too long */
-    /* Add content animation (optional) */
-    transform: translateY(20px); /* Start slightly off-screen */
-    transition: transform 0.3s ease-out; /* Smooth transition for slide */
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f3f3f3e7;
+  border: 15px solid #f3f3f300;
+  border-radius: 13px;
+  height: 70svh;
+  width: 95svw;
+  max-width: 800px;
+  overflow-y: scroll;
 }
 
-/* When the modal overlay is visible, animate the content */
 .modal-overlay.visible .modal-content {
-    transform: translateY(0); /* Slide into place */
+    transform: translateY(0);
 }
 
 
 .modal-content p {
-    padding: 10px 15px;
+    padding: 10px 5px;
 }
 
 .modal-content h2 {
+    margin: 10px 0;
     font-weight: 500;
     text-align: center;
 }
 
-
-.modal-close-button {
-    position: sticky;
-    width: 100%;
-    text-align: right;
-    padding: 0 15px;
-    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 0.86) 74%, rgba(237, 221, 83, 0) 100%);
-    top: 0;
-    border: none;
-    font-size: 3rem; 
-    cursor: pointer;
-    color: #999; 
-    transition: color 0.2s ease-in-out;
+.location-info {
+  padding: 15px;
 }
 
+
+.location {
+  overflow-y: scroll;
+  padding: 10px 0 0 0;
+  width: 95svw;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.904);
+  box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.1),
+          inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+          inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 800px;
+}
+
+.location-modal-content .map-container {
+  margin: 10px auto;
+}
+.location-modal-content .map-container {
+    width: 95%;
+    aspect-ratio: 1.5;
+    display: block; /* Remove extra space below iframe */
+}
+.location-modal-content .contact-dt, .location-modal-content .contact-dt strong, .location-modal-content .contact-dt p  {
+  padding: 5px 2px;
+}
+
+.location-modal-content h2 {
+  margin: 0;
+  color: white;
+  padding: 3px 15px 0px 15px;
+  background-color: rgba(53, 51, 51, 0.918);
+  border-radius: 10px;
+}
+
+.location-modal-content p {
+  padding: 10px 15px;
+}
+
+.contact {
+    width: 95svw;
+    max-width: 700px;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(224, 224, 224, 0.842);
+    box-shadow:
+                  0 4px 20px rgba(0, 0, 0, 0.1),
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                  inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    isolation: isolate;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-modal-content h2 {
+  color: #ffffff;
+  background-color: rgba(53, 51, 51, 0.918);
+  border-radius: 10px;
+  padding: 3px 15px 0px 15px;
+  margin: 0;
+}
+
+.contact-modal-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contact-modal-content a:active {
+  color: #118caa;
+}
+
+.contact-modal-content td {
+  padding: 5px 0;
+}
+
+.modal-close-button {
+    display: none;
+}
+
+.fac-modal-close-button {
+  display: none;
+  }
+
+.goodtoknow {
+  overflow-y: scroll;
+  padding: 15px;
+  width: 95svw;
+  max-width: 800px;
+  height: 90svh;
+  border-radius: 10px;
+  background-color: rgba(224, 224, 224, 0.842);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.good-to-know-modal-content {
+  overflow-y: scroll;
+  height: auto;
+}
+
+.good-to-know-modal-content-wrapper ul{
+  padding: 10px 5px 5px 30px;
+}
+
+.good-to-know-modal-content h2 {
+  color: #ffffff;
+  background-color: rgba(53, 51, 51, 0.918);
+  border-radius: 10px;
+  padding: 3px 15px 0px 15px;
+  margin: 0;
+}
+
+.amenities-modal-content .facility {
+  overflow-y: scroll;
+  padding: 0px 0px 15px 0;
+  width: 95svw;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: rgba(224, 224, 224, 0.842);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.amenities-modal-content h2 {
+  margin: 0;
+  color: #ffffff;
+  padding: 3px 15px 0px 15px;
+  border-radius: 10px;
+  background-color: rgba(53, 51, 51, 0.918);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.popup-header {
+  top: 0;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 ;
+  margin: 10px 0;
+}
+
+.amenities-modal-close-button, .location-modal-close-button, .contact-modal-close-button, .goodtoknow-modal-close-button {
+  font-size: 1.5em;
+  padding: 0px 15px 0px 15px;
+  background-color: rgba(53, 51, 51, 0.918);
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.amenities-modal-close-button:active, .location-modal-close-button:active, .contact-modal-close-button:active, .goodtoknow-modal-close-button:active {
+  scale: 0.9;
+}
+
+.room-display-overlay {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f3f3f3e7;
+  border: 15px solid #f3f3f300;
+  border-radius: 13px;
+  height: 90svh;
+  width: 95svw;
+  overflow-y: scroll;
+}
 
 .room-display-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    padding: 20px 15px;
+    padding: 20px 0px;
 }
 
 .room-display-grid a {
@@ -530,7 +848,7 @@ h1, h2 {
 
 .room-box img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1.6;
     object-fit: cover;
     border-bottom: 1px solid #eee;
 }
@@ -553,11 +871,25 @@ h1, h2 {
 /* Food */
 
 .food-ds, .tour-ds {
-  padding: 15px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f3f3f3e7;
+  border: 15px solid #f3f3f300;
+  border-radius: 13px;
+  height: 90svh;
+  width: 95svw;
+  max-width: 800px;
+  overflow-y: scroll;
+}
+
+.tour-ds ul {
+  padding-left: 20px;
+  padding-bottom: 15px;
 }
 
 .food-ds img, .tour-ds img {
-  margin: 15px 0;
+  border-radius: 10px;
+  margin: 0 0 10px 0;
   width: 100%;
   display: block;
 }
@@ -578,18 +910,12 @@ h1, h2 {
 
 .city-tour {
   margin-top: 50px;
-  background-color: #eff5ee;
 }
 
-.activity-tour {
-  background-color: #f0f1e6;
-}
 
 .city-tour, .activity-tour {
   border-top: 1px dotted rgb(126, 126, 126);
-  padding: 15px 15px 50px 15px;
-  margin-left: -15px;
-  margin-right: -15px;
+  padding: 15px 5px 50px 5px;
 }
 
 .temple-tour-ds, .city-tour-ds, .activity-tour-ds {
@@ -598,18 +924,23 @@ h1, h2 {
   border-radius: 10px;
 }
 
+.atv-img {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.atv-img img {
+  width: 120px;
+}
+
 /* Section 6: Map Location */
 
-#location {
-    max-width: 800px;
-}
-
-.location-info {
-    padding: 0 15px;
-}
-
 .map-container {
-    width: 100%;
+    aspect-ratio: 1.5;
+    width: 95%;
     max-width: 800px;
     margin: 0 auto 30px auto;
     border-radius: 8px;
@@ -619,10 +950,44 @@ h1, h2 {
 
 .map-container iframe {
     width: 100%;
-    height: 450px; /* Adjust height as needed */
+    height: 100%; /* Adjust height as needed */
     display: block; /* Remove extra space below iframe */
 }
 
+.section-header {
+            margin: 0;
+            width: 100%;
+            padding: 5px 0px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(175, 175, 175, 0.274);
+        }
+        .section-content {
+            border-top: none;
+            padding: 0px;
+            margin-bottom: 15px;
+            display: none; /* Hidden by default */
+        }
+
+        .section-content ul, .contact-dt ul {
+          padding: 5px 0px 0 20px;
+        }
+
+        .section-content li {
+          padding: 5px 0px;
+        }
+        
+        .section-header .arrow {
+            font-size: 1.2em;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section-header.active .arrow {
+            transform: rotate(90deg);
+        }
 
 .contact-dt {
     padding: 15px;
@@ -634,13 +999,22 @@ h1, h2 {
 }
 
 .contact-li {
-    text-align: center;
     padding-top: 50px;
     margin-top: 20px;
     border-top: 1px dotted rgb(192, 192, 192);
 }
 
+.contact-li table {
+  margin: 0 auto;
+}
+
+.contact-li td {
+  padding: 10px 0;
+}
+
 .contact-li h2 {
+  margin: 0;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -648,18 +1022,30 @@ h1, h2 {
     color: #242222;
 }
 .contact-icon {
-    padding: 30px 0;
+    padding: 15px 0 5px 0;
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 5px 20px;
     justify-content: center;
     margin: 0 auto;
 }
+
+.contact-icon p {
+  padding: 5px;
+}
+
 .contact-icon a {
-    gap: 5px;
+    padding: 0 10px;
+    border-radius: 15px;
+    width: 140px;
+    gap: 0px;
     display: flex;
     align-items: center;
     text-decoration: none;
+}
+
+.contact-icon a:active {
+  color: #118caa;
 }
 
 .contact-icon img {
@@ -667,7 +1053,7 @@ h1, h2 {
 }
 
 .mobile-book-btn {
-      width: 90% ;
+      width: 93%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -675,19 +1061,24 @@ h1, h2 {
       bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(140deg, #19191a 30%, #262727 50%, #19191a 70%);
+      background: linear-gradient(140deg, #d1d1d15b 30%, #ffffff57 50%, #d1d1d15b 70%);
       background-size: 400%;
-      backdrop-filter: blur(2px) saturate(100%);
-      -webkit-backdrop-filter: blur(2px) saturate(100%);
-      color: white;
-      border: 1px solid rgba(247, 247, 247, 0.151);
+      color: #333;
       padding: 20px 5px;
-      border-radius: 5px;
+      border-radius: 10px;
       font-weight: bold;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      font-size: 1em;
       z-index: 999;
       cursor: pointer;
       animation: pulse 2s infinite linear;
+      box-shadow:
+                  0 4px 20px rgba(0, 0, 0, 0.1),
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                  inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      isolation: isolate;
+      border: 1px solid rgba(255, 255, 255, 0.692);
     }
     .mobile-book-btn img {
       position: absolute;
@@ -915,6 +1306,7 @@ h1, h2 {
     .booking-form-mobile .selected-text {
       color: #777;
       margin: 0 auto;
+      font-weight: 500;
     }
 
     .dropdown-arrow {
@@ -990,18 +1382,29 @@ h1, h2 {
     #submitBtnMobile {
   width: 100%;
   padding: 12px;
-  background: #8daeb8;
+  background: linear-gradient(140deg, #363535 30%, #5e5b5b 50%, #363535 70%);
+  background-size: 400%;
   color: white;
-  border: none;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
   transition: all 0.3s ease;
+  animation: shimmer 2s infinite linear;
+      box-shadow:
+                  0 4px 20px rgba(0, 0, 0, 0.1),
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                  inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      isolation: isolate;
+      border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #submitBtnMobile:disabled {
+  border: none;
+  box-shadow: none;
   background: #cccccc;
   cursor: not-allowed;
   opacity: 0.7;
@@ -1064,10 +1467,12 @@ select {
 
 .month-year-selector button {
   width: 30%;
-  padding: 13.5px 30px;
-  background: #8dacb8;
+  height: 100%;
+  padding: 10px 30px;
+  font-size: 1em;
+  border: 1px solid #383a3b;
+  background: #383a3b;
   color: white;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
@@ -1101,6 +1506,15 @@ footer {
     margin-top: 0px;
 }
 
+#main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+#main-content.show {
+    opacity: 1;
+}
+
 #loading-screen {
     position: fixed;
     top: 0;
@@ -1109,6 +1523,7 @@ footer {
     height: 100%;
     background: #ffffff;
     z-index: 9999;
+    transition: opacity 0.5s ease-out;
 }
 
 .loader {
