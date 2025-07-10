@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="../mobile-image/logo.webp">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Onederz Koh Rong Sanloem - Welcome</title>
+    <title>Onederz Koh Rong Samloem - Welcome to Island Paradise</title>
     <link rel="stylesheet" media="screen and (max-width:767px)" href="small.css">
     <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1199px)" href="medium.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" href="large.css">
@@ -18,15 +19,27 @@
         <div class="loader loader3"></div>
         <div class="loader loader4"></div>
     </div>
-<main id="main-content" style="display: none;">
+<main    id="main-content"    style="display: none;">
     <div class="main-hotel-header"></div>
-    <div class="header-bar pc">
+    <div class="header-bar mobile-menu" id="mobileMenu">
         <p class="header-discover" id="amenities-link">Amenities & Services</p>
         <p class="discover-our-room header-discover">Accommodation</p>
+        <p class="discover-our-tour header-discover">Experiences</p>
         <p class="discover-our-food header-discover">Eatery</p>
         <p id="location-link" class="header-discover" data-target="location">Location</p>
         <p class="header-discover" id="contactTrigger">Contact</p>
+        <p id="good-to-know-link" class="header-discover" data-target="good-to-know">Good to know</p>
     </div>
+       <div class="overlay" id="overlay"></div>
+    <nav class="navbar">
+        <div class="bg-bar"></div>
+        <div class="menu-toggle" id="menu" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
     <div class="hotel-header">
         <a href="../index.html"><div class="back-main"></div></a>
         <img src="../mobile-image/onederzlogo.webp" alt="Onederz Logo" class="logo">
@@ -37,12 +50,7 @@
             <div class="hero-content">
                 <div class="slider-container">
                     <div class="slider">
-                        <img src="koh-rong-sanloem-img/hostel-exterior.webp" alt="Onederz Koh Rong Sanloem Exterior" class="hotel-main-image" loading="lazy">
-                        <img src="koh-rong-sanloem-img/lobby-area.webp" alt="Onederz Koh Rong Sanloem Lobby" class="hotel-main-image" loading="lazy">
-                        <img src="koh-rong-sanloem-img/dorm-room.webp" alt="Onederz Koh Rong Sanloem Dorm" class="hotel-main-image" loading="lazy">
-                        <img src="koh-rong-sanloem-img/private-room.webp" alt="Onederz Koh Rong Sanloem Private Room" class="hotel-main-image" loading="lazy">
-                        <img src="koh-rong-sanloem-img/common-area.webp" alt="Onederz Koh Rong Sanloem Common Area" class="hotel-main-image" loading="lazy">
-                        <img src="koh-rong-sanloem-img/restaurant.webp" alt="Onederz Koh Rong Sanloem Restaurant" class="hotel-main-image" loading="lazy">
+                        <img src="koh-rong-sanloem-img/koh-rong-sanleom-top-image.webp" alt="Onederz Koh Rong Samloem Beachfront" class="hotel-main-image" loading="lazy">
                     </div>
                     <div class="dots-container"></div>
                 </div>
@@ -50,13 +58,13 @@
         </section>
 
         <section id="about-us" class="section fade-in-section">
-            <h2>WELCOME TO <br> ONEDERZ KOH RONG SANLOEM</h2>
-            <p>Discover paradise at Onederz Koh Rong Sanloem, nestled on the stunning Saracen Bay. Our highly-rated hostel offers a serene and relaxed atmosphere, perfect for unwinding amidst tropical beauty. Enjoy comfortable accommodations in private rooms or dorms, a beautiful swimming pool, and direct access to the pristine white sand beach. We are consistently praised for our tranquil environment, comfortable facilities, and friendly staff. It's the ideal place to relax, swim, and explore the island's natural wonders like Lazy Beach and the bioluminescent plankton.</p>
+            <h2>WELCOME TO <br> ONEDERZ KOH RONG SAMLOEM</h2>
+            <p>Onederz Koh Rong Samloem offers comfortable dorms and private rooms, along with lively common areas. We are an ideal beachfront base on Saracen Bay, where guests can swim directly in the clear sea, explore Koh Rong Samloem's tranquil beaches, vibrant marine life, and enjoy a more relaxed island atmosphere.</p>
         </section>
     </div>
 
     <section id="facility" class="section section-pad fade-in-section">
-        <h2>Your Stay: Comfort & Connection</h2>
+        <h2>Comfort & Connection</h2>
         <div class="facility fade-in-item">
             <div class="accommodation-section">
                 <h3>Your Space</h3>
@@ -68,7 +76,7 @@
             <div class="facilities-section">
                 <h3>Hostel Perks</h3>
                 <ul>
-                    <li><img src="../mobile-image/fac-svg/swimming-pool-sign-svgrepo-com.webp" alt="">Sparkling Pool</li>
+                    <li><img src="../mobile-image/fac-svg/beach-access-svgrepo-com.webp" alt="">Direct Beach Access</li>
                     <li><img src="../mobile-image/fac-svg/sofa-svgrepo-com.webp" alt="">Common Areas</li>
                     <li><img src="../mobile-image/fac-svg/cocktail-svgrepo-com.webp" alt="">Bar & Restaurant</li>
                     <li><img src="../mobile-image/fac-svg/wifi-svgrepo-com.webp" alt="">Complimentary Wi-Fi</li>
@@ -78,9 +86,7 @@
                 <h3>Guest Services</h3>
                 <ul>
                     <li><img src="../mobile-image/fac-svg/bell-svgrepo-com.webp" alt="">24/7 Reception</li>
-                    <li><img src="../mobile-image/fac-svg/tour-pin-tear-svgrepo-com.webp" alt="">Bus & Ferry Tickets</li>
-                    <li><img src="../mobile-image/fac-svg/laundry-service-svgrepo-com.webp" alt="">Laundry Service</li>
-                    <li><img src="../mobile-image/fac-svg/scooter-svgrepo-com.webp" alt="">Scooter Rentals</li>
+                    <li><img src="../mobile-image/fac-svg/tour-pin-tear-svgrepo-com.webp" alt="">Boat Trips & Transport</li>
                 </ul>
             </div>
         </div>
@@ -90,42 +96,42 @@
         <section id="rooms" class="section section-pad fade-in-section">
             <div class="room-us fade-in-item">
                 <div class="room-img">
-                    <img src="koh-rong-sanloem-img/dorm-room.webp" alt="Dorm Room" class="privateroom">
-                    <img src="koh-rong-sanloem-img/private-room.webp" alt="Private Room" class="dormroom pc">
+                    <img src="koh-rong-sanloem-img/triple-bed.webp" alt="Private Room" class="privateroom">
+                    <img src="koh-rong-sanloem-img/dorm-bed.webp" alt="Dorm Room" class="dormroom pc">
                 </div>
                 <div class="room-pv-ds fade-in-item">
                     <h3>Sleep & Relax</h3>
-<p>Choose from our cozy mixed or female-only dorms featuring privacy curtains, individual power sockets, and reading lights, all with air-conditioning and large secure lockers. Or upgrade to a spacious private room with en-suite bathrooms, air-conditioning, TV, and complimentary toiletries. All options include free high-speed Wi-Fi.</p>
+                    <p>Choose from our comfortable mixed or female-only dorms featuring privacy curtains, individual power sockets, and reading lights, all with air-conditioning and secure lockers. We also offer private rooms with en-suite bathrooms, air-conditioning, and complimentary toiletries. All options include free high-speed Wi-Fi.</p>
                 </div>
                 <p class="discover-our-room fade-in-item">Discover more</p>
-            </div>
-        </section>
-
-        <section id="experience" class="section section-pad fade-in-section">
-            <div class="tour-us fade-in-item">
-                <div class="exp-img">
-                    <img src="koh-rong-sanloem-img/saracen-bay.webp" alt="Saracen Bay" class="exp1">
-                    <img src="koh-rong-sanloem-img/lazy-beach.webp" alt="Lazy Beach" class="exp2 pc">
-                </div>
-                <div class="tour-pv-ds fade-in-item">
-                    <h3>Explore Koh Rong Sanloem</h3>
-<p>While direct tours may vary, our knowledgeable team is always on hand to provide you with comprehensive information on all the best places to visit in and around Koh Rong Sanloem, including stunning beaches like Saracen Bay and Lazy Beach, and unique experiences like bioluminescent plankton viewing! We can also help arrange convenient **bus and ferry tickets** to other destinations, ensuring you make the most of your adventure.</p>
-                </div>
-                <p class="discover-our-tour fade-in-item">Discover more</p>
             </div>
         </section>
 
         <section id="food" class="section section-pad fade-in-section">
             <div class="food-us fade-in-item">
                 <div class="food-img">
-                    <img src="koh-rong-sanloem-img/restaurant.webp" alt="Restaurant" class="food1">
-                    <img src="koh-rong-sanloem-img/bar.webp" alt="Bar" class="food2 pc">
+                    <img src="koh-rong-sanloem-img/sea-view.webp" alt="Onederz Koh Rong Samloem Restaurant" class="food1">
+                    <img src="koh-rong-sanloem-img/lounge.webp" alt="Onederz Koh Rong Samloem Bar" class="food2 pc">
                 </div>
                 <div class="food-pv-ds fade-in-item">
                     <h3>Eat & Drink</h3>
-<p>Our poolside restaurant and bar serves a wide variety of delicious and reasonably priced Khmer and Western dishes. Enjoy lively happy hour specials daily and easily connect with fellow travelers in our social space overlooking the pool.</p>
+                    <p>Our on-site restaurant and bar offer convenient and delicious dining experiences. Enjoy your meals and drinks just steps from the beautiful Saracen Bay, with the sea right in front of you.</p>
                 </div>
                 <p class="discover-our-food fade-in-item">Discover more</p>
+            </div>
+        </section>
+
+        <section id="experience" class="section section-pad fade-in-section">
+            <div class="tour-us fade-in-item">
+                <div class="exp-img">
+                    <img src="koh-rong-sanloem-img/night-party.webp" alt="Koh Rong Samloem Activities" class="exp1">
+                    <img src="koh-rong-sanloem-img/experience.webp" alt="Koh Rong Samloem Island Trip" class="exp2 pc">
+                </div>
+                <div class="tour-pv-ds fade-in-item">
+                    <h3>Island Adventures Await!</h3>
+                    <p>Beyond our doors, discover the pristine beaches, crystal-clear waters, and exciting activities of Koh Rong Samloem. From tranquil snorkeling spots and peaceful jungle treks to breathtaking sunsets, there's always something incredible to experience on this serene island!</p>
+                </div>
+                <p class="discover-our-tour fade-in-item">Discover more</p>
             </div>
         </section>
     </div>
@@ -133,24 +139,75 @@
     <section id="location" class="section section-pad fade-in-section">
         <div class="location-info">
             <h2>Our Location</h2>
-            <p>Onederz Koh Rong Sanloem is conveniently located on Saracen Bay, just a short walk from the main pier. Our address: Saracen Bay, Koh Rong Sanloem, Cambodia.</p>
+            <p>Onederz Koh Rong Samloem is conveniently located on Saracen Bay, Koh Rong Samloem, just a short walk from the main pier, offering direct beach access and easy arrival.</p>
         </div>
         <div class="map-container fade-in-item">
-            <iframe src="https://maps.google.com/?cid=10178406162993000870" class="location-maps" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d980.5065039391459!2d103.30991832919797!3d10.577137017846328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3107ef23ffffffe7%3A0xab3cb2bba3bad1af!2sOnederz+Koh+Rong+Sanloem!5e0!3m2!1sen!2skh!4v1553485456614"   class="location-maps"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact-dt fade-in-item">
-            <strong>Getting Here:</strong>
-            <p>From Sihanoukville: 45-minute to 1.5-hour ferry ride ($15-$25). We're just a short walk from the Saracen Bay pier.</p>
-            
+            <h3>Getting to Onederz Koh Rong Samloem: Your Island Journey</h3>
+            <p>Onederz Koh Rong Samloem is located directly on Saracen Bay, making it easy to reach from Saracen Bay Pier. Here's how to find us:</p>
+
+            <div class="accordion">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>I. Arriving by Ferry to Saracen Bay Pier</span>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="section-content">
+                    <p>Most ferries from Sihanoukville now offer direct routes to Saracen Bay Pier on Koh Rong Samloem.</p>
+                    <h4>From Saracen Bay Pier:</h4>
+                    <ul>
+                        <li>Distance: Onederz Koh Rong Samloem is just a short walk (approximately 100-200 meters) from Saracen Bay Pier.</li>
+                        <li>How to Get Here:
+                            <ul>
+                                <li>Simply disembark the ferry and walk along Saracen Bay. We are very close by on the main beach.</li>
+                                <li>There are no tuk-tuks or taxis on Koh Rong Samloem. The island is best explored on foot or by boat taxi.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>II. From Other Beaches or Bays on Koh Rong Samloem</span>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="section-content">
+                    <p>If you're arriving from another beach or bay on Koh Rong Samloem (e.g., M'Pai Bay or Lazy Beach), you'll typically need to take a boat taxi to Saracen Bay Pier.</p>
+                    <h4>From Other Locations:</h4>
+                    <ul>
+                        <li>Boat Taxi: Arrange a boat taxi from your current location to Saracen Bay Pier. Prices will vary depending on distance.</li>
+                        <li>Once you arrive at Saracen Bay Pier, follow the directions above.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>General Tips for your arrival:</h3>
+            <ul>
+                <li>No ATMs on Koh Rong Samloem: While some places accept card payments, it's highly recommended to bring sufficient cash (USD is widely accepted) with you from Sihanoukville.</li>
+                <li>Power: Electricity can sometimes be limited or operate on a schedule on certain parts of the island. Our hostel generally has consistent power.</li>
+                <li>Onederz Contact: If you encounter any issues or need directions upon arrival, please don't hesitate to call us directly.</li>
+            </ul>
+            <p>We look forward to welcoming you to Onederz Koh Rong Samloem, your perfect island escape!</p>
+
             <div class="contact-li fade-in-item">
                 <h2>Contact Us</h2>
-                <p>Email: <a href="mailto:onederzkohrongsanloem@gmail.com">onederzkohrongsanloem@gmail.com</a></p>
-                <p>Phone: <a href="tel:+855XXXXXXXXX">+855 XXXXX XXXX</a> (Placeholder)</p>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td> : <a href="mailto:onederzkohrongsanloem@gmail.com">onederzkohrongsanloem@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td> : <a href="tel:+85590200400">+855 90 200 400</a></td>
+                    </tr>
+                </table>
                 <div class="contact-icon">
-                    <a href="https://wa.me/855XXXXXXXXX"  aria-label="Chat on WhatsApp"><img src="../mobile-image/whatsapp.webp" alt=""><p>WhatsApp</p></a>
-                    <a href="https://t.me/onederzkohrongsanloem" aria-label="Chat on Telegram"><img src="../mobile-image/Telegram.webp" alt=""><p>Telegram</p></a>
-                    <a href="https://m.me/onederzkohrongsanloem" aria-label="Messenger"><img src="../mobile-image/Messenger.webp" alt=""><p>Messenger</p></a>
-                    <a href="https://web.facebook.com/onederzkohrongsanloem" aria-label="facebook"><img src="../mobile-image/fb-icon.webp" alt=""><p>Facebook</p></a>
+                    <a href="https://wa.me/85590200400"    aria-label="Chat on WhatsApp"><img src="../mobile-image/whatsapp.webp" alt=""><p>WhatsApp</p></a>
+                    <a href="https://t.me/+85590200400" aria-label="Chat on Telegram"><img src="../mobile-image/Telegram.webp" alt=""><p>Telegram</p></a>
+                    <a href="https://m.me/onederzkrs" aria-label="Messenger"><img src="../mobile-image/Messenger.webp" alt=""><p>Messenger</p></a>
+                    <a href="https://web.facebook.com/onederzkrs" aria-label="facebook"><img src="../mobile-image/fb-icon.webp" alt=""><p>Facebook</p></a>
                 </div>
             </div>
         </div>
@@ -158,14 +215,491 @@
 
     <div class="main-mobile-book-btn">
         <button class="mobile-book-btn" id="mobileBookBtn">
-            <img src="../mobile-image/calendar-svgrepo-com.webp" alt="">
+            <img src="../mobile-image/calendar-33-svgrepo-com.webp" alt="">
             <span>BOOK NOW</span>
         </button>
     </div>
-<footer>
-        <p>© 2025 Onederz Koh Rong Sanloem. All rights reserved.</p>
+
+    <div class="booking-overlay" id="bookingOverlay"></div>
+  <div class="booking-form-mobile">
+    <div class="booking-form-header">
+      <button class="back-button" id="mobileBackBtn"></button>
+      <h3>Book Your Stay</h3>
+      <p>The best rate guaranteed!! Book directly with us and get the best price now!</p>
+    </div>
+    
+    <form class="search-form" id="searchFormMobile">
+      <div class="form-group">
+        <div class="custom-dropdown custom-dropdown-mobile">
+          <div class="dropdown-header">
+            <span class="selected-text">Onederz Koh Rong Samloem</span>
+            <span class="dropdown-arrow"></span>
+          </div>
+          <ul class="dropdown-options">
+            <li data-value="siem-reap">Onederz Siem Reap</li>
+            <li data-value="phnom-penh">Onederz Phnom Penh</li>
+            <li data-value="kampot">Onederz Kampot</li>
+            <li data-value="sihanoukville">Onederz Sihanoukville</li>
+            <li data-value="koh-rong">Onederz Koh Rong</li>
+            <li data-value="koh-rong-samloem">Onederz Koh Rong Samloem</li>
+          </ul>
+          <input type="hidden" id="destination-mobile" name="destination" value="koh-rong-samloem" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="checkin-checkout-mobile" class="date-input" placeholder="Check-in        |          Check-out" readonly>
+        <div class="calendar-container" id="calendarContainerMobile">
+            <div class="month-year-selector" style="display: none;">
+    <select class="month-select">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <select class="year-select">
+      </select>
+    <button class="confirm-month-year">OK</button>
+  </div>
+          <div class="calendar-nav">
+            <button type="button" id="prev-month-mobile" disabled><img src="../mobile-image/arrow-square-left-svgrepo-com.webp" alt="prev"></button>
+            <button type="button" id="next-month-mobile"><img src="../mobile-image/arrow-square-right-svgrepo-com.webp" alt="next"></button>
+          </div>
+          <div class="calendar-wrapper">
+            <div class="calendar" id="calendar-current-mobile">
+
+              <div class="calendar-header">
+                <div class="calendar-title calendar-first-month" id="current-month-title-mobile">June 2023</div>
+              </div>
+              <div class="calendar-grid" id="calendar-days-header-mobile">
+                <div class="calendar-day-header">SU</div>
+                <div class="calendar-day-header">MO</div>
+                <div class="calendar-day-header">TU</div>
+                <div class="calendar-day-header">WE</div>
+                <div class="calendar-day-header">TH</div>
+                <div class="calendar-day-header">FR</div>
+                <div class="calendar-day-header">SA</div>
+              </div>
+              <div class="calendar-grid" id="calendar-current-days-mobile"></div>
+            </div>
+            <div class="calendar" id="calendar-next-mobile">
+              <div class="calendar-header">
+                <div class="calendar-title" id="next-month-title-mobile">July 2023</div>
+              </div>
+              <div class="calendar-grid" id="calendar-days-header-mobile">
+                <div class="calendar-day-header">SU</div>
+                <div class="calendar-day-header">MO</div>
+                <div class="calendar-day-header">TU</div>
+                <div class="calendar-day-header">WE</div>
+                <div class="calendar-day-header">TH</div>
+                <div class="calendar-day-header">FR</div>
+                <div class="calendar-day-header">SA</div>
+              </div>
+              <div class="calendar-grid" id="calendar-next-days-mobile"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" id="submitBtnMobile">CHECK AVAILABILITY</button>
+      </div>
+    </form>
+  </div>
+
+    <footer>
+        <p>© 2025 Onederz Koh Rong Samloem. All rights reserved.</p>
     </footer>
 </main>
+
+<div id="amenitiesModal" class="modal-overlay hidden">
+    <div class="amenities-modal-content">
+        <div class="popup-header">
+            <h2>Comfort & Connection</h2>
+            <span class="amenities-modal-close-button">&times;</span>
+            </div>
+        <div class="facility fade-in-item">
+            <div class="accommodation-section">
+                <h3>Your Space</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bunk-hostel-svgrepo-com.webp" alt="">Comfy Dorms</li>
+                    <li><img src="../mobile-image/fac-svg/bed-svgrepo-com.webp" alt="">Private Rooms</li>
+                </ul>
+            </div>
+            <div class="facilities-section">
+                <h3>Hostel Perks</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/beach-access-svgrepo-com.webp" alt="">Direct Beach Access</li>
+                    <li><img src="../mobile-image/fac-svg/sofa-svgrepo-com.webp" alt="">Common Areas</li>
+                    <li><img src="../mobile-image/fac-svg/cocktail-svgrepo-com.webp" alt="">Bar & Restaurant</li>
+                    <li><img src="../mobile-image/fac-svg/wifi-svgrepo-com.webp" alt="">Complimentary Wi-Fi</li>
+                </ul>
+            </div>
+            <div class="services-section">
+                <h3>Guest Services</h3>
+                <ul>
+                    <li><img src="../mobile-image/fac-svg/bell-svgrepo-com.webp" alt="">24/7 Reception</li>
+                    <li><img src="../mobile-image/fac-svg/tour-pin-tear-svgrepo-com.webp" alt="">Boat Trips & Transport</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="room-popup popup">
+    <div class="close-bg">
+        <button class="close-rooms">×</button>
+        <a href="https://hotels.cloudbeds.com/en/reservation/VUxg0w?currency=usd"><button class="check-room"><p>AVAILABILITY</p></button></a>
+    </div>
+    <div class="room-display-overlay">
+        <div class="container-div">
+            <h2>Dorms & Private Rooms</h2>
+        
+        <p>Whether you're looking to mingle and save, or prefer a tranquil retreat, our accommodations are designed to meet your needs. Our dorm rooms foster a vibrant community feel with cozy, private bunk spaces, while our private rooms offer a personal sanctuary complete with en-suite amenities. Both options prioritize your comfort with quality furnishings and essential features for a memorable stay. 
+            <!-- The read more button to open the modal -->
+            <button id="dormReadMoreBtn" class="toggle-button">Read more...</button>
+        </p>
+        </div>
+        
+        <div class="room-display-grid">
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/dorm-bed.webp" alt="4 Bed Mixed Dorm - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>4-Bed Dormitory Room</h3>
+                    <p>(Available as Mixed Only)</p>
+                    <p>Perfect for: Budget travelers and small groups who enjoy a communal atmosphere.</p>
+                    <p>Our intimate 4-bed mixed dorms offer a cozy communal space. Each bunk features privacy curtains, personal lights, and secure lockers. Shared bathrooms are conveniently located nearby.</p>
+                    <p class="room-features">Max People: 4 | Shared Bathroom | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/dorm-bed.webp" alt="6 Bed Mixed Dorm - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>6-Bed Dormitory Room</h3>
+                    <p>(Available as Mixed Only)</p>
+                    <p>Perfect for: Socializing and meeting new people in a slightly larger setting.</p>
+                    <p>Our 6-bed mixed dorms provide a balanced communal environment. Each bunk includes privacy curtains, personal lights, and lockers. Shared bathrooms are easily accessible.</p>
+                    <p class="room-features">Max People: 6 | Shared Bathroom | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/dorm-bed.webp" alt="8 Bed Mixed/Female Dorm - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>8-Bed Dormitory Room</h3>
+                    <p>(Available as Mixed or Female Only)</p>
+                    <p>Perfect for: Socializing and connecting with more travelers.</p>
+                    <p>Our spacious 8-bed dorms offer a vibrant atmosphere for meeting fellow travelers. Each bunk includes privacy curtains, personal lights, and lockers. Shared bathrooms are conveniently located nearby.</p>
+                    <p class="room-features">Max People: 8 | Shared Bathroom | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/double-bed.webp" alt="Double Room with Terrace - Image 1">
+                        <img src="koh-rong-sanloem-img/terrace.webp" alt="Double Room with Terrace - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>Double Room with Terrace</h3>
+                    <p>Perfect for: Couples or solo travelers seeking privacy with outdoor space.</p>
+                    <p>A comfortable private room featuring a cozy double bed, an en-suite bathroom, and a private terrace where you can relax and enjoy the island breeze.</p>
+                    <p class="room-features">Max People: 2 | Private Bathroom | Terrace | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/twin-bed.webp" alt="Twin Room with Terrace - Image 1">
+                        <img src="koh-rong-sanloem-img/terrace.webp" alt="Twin Room with Terrace - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>Twin Room with Terrace</h3>
+                    <p>Perfect for: Friends traveling together seeking comfort and outdoor space.</p>
+                    <p>This private room features two comfortable single beds, an en-suite bathroom, and a private terrace, providing a pleasant space to unwind after your adventures.</p>
+                    <p class="room-features">Max People: 2 | Private Bathroom | Terrace | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/double-bed.webp" alt="Double Room with Private Bathroom - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>Double Room with Private Bathroom</h3>
+                    <p>Perfect for: Couples or solo travelers prioritizing privacy and convenience.</p>
+                    <p>A comfortable private room featuring a cozy double bed and an en-suite bathroom, offering a peaceful retreat after exploring the island.</p>
+                    <p class="room-features">Max People: 2 | Private Bathroom | Free Wifi</p>
+                </div>
+            </div>
+
+            <div class="room-box fade-in-item">
+                <div class="room-image-slider-container">
+                    <div class="room-image-slider">
+                        <img src="koh-rong-sanloem-img/triple-bed.webp" alt="Triple Room with Private Bathroom - Image 1">
+                    </div>
+                    <div class="dots-container"></div>
+                </div>
+                <div>
+                    <h3>Triple Room with Private Bathroom</h3>
+                    <p>Perfect for: Small groups or families looking for a private shared space.</p>
+                    <p>A spacious private room designed to comfortably accommodate three guests, typically with three single beds or a combination of beds, and an en-suite bathroom.</p>
+                    <p class="room-features">Max People: 3 | Private Bathroom | Free Wifi</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="dormInfoModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="modalCloseBtn" class="modal-close-button">&times;</button> 
+            <h2>Dorms: Connect & Unwind</h2>
+
+            <p>We believe a great stay balances privacy with community! Our <strong>dorm rooms</strong> offer both, with <strong>bunk beds designed like cozy boxes</strong> that give you your own private space. Inside, you'll find everything you need: an <strong>electric socket, a reading lamp, and an accessory case</strong>. Even though we're a <strong>budget-friendly accommodation</strong>, we don't compromise on comfort; our <strong>mattresses, blankets, and pillows are as good as those in a hotel</strong>. Plus, all our rooms come with <strong>well-maintained air-conditioners and exhaust fans</strong> to keep you comfortable.</p>
+            <p>To ensure your peaceful sleep isn't disturbed, we've placed our <strong>shared bathrooms conveniently outside the dorm rooms</strong>. This means you can get all the rest you need to wake up refreshed and ready to connect with fellow travelers.</p>
+
+            <p>Keep your belongings safe and sound in our <strong>large lockers, measuring 40cm x 50cm x 80cm</strong>. We even provide <strong>padlocks</strong> if you don't have your own. So, you'll get two keys when you check in: one for your room door and another for your personal locker. We look forward to welcoming you and helping you make the most of your trip! </p>
+            <br>
+            <br>
+            <h2>Private Room: Your Social Base</h2>
+        
+            <p>Discover the perfect balance of personal space and social opportunity in our <strong>private rooms</strong>. Each room is thoughtfully designed to be your comfortable base, featuring a refreshing <strong>air conditioner</strong> and peace of mind with your own <strong>electronic digital security box</strong>. We've included an <strong>electric kettle</strong> to kickstart your mornings, and <strong>bottles of water</strong> to keep you hydrated. Stay connected with loved ones or plan your next outing using our <strong>free Wifi</strong>, and enjoy the luxury of fresh <strong>towels and more</strong>.</p>
+
+            <p>Forget shared facilities! You'll love the convenience of your <strong>private bathroom right inside the room</strong>. With a clever <strong>partition wall and curtain separating the shower booth and toilet</strong>, you'll have all the space and privacy needed to get ready for a bustling day of sightseeing or to relax after a fun social evening. </p>
+        </div>
+    </div>
+
+<div class="food-popup popup">
+    <div class="close-bg">
+        <h2>Eatery</h2>
+        <button class="close-foods">×</button>
+    </div>
+    <div class="food-bg"></div>
+    <div class="food-ds fade-in-item">
+        <div class="imgtext-food1">
+            <div class="food-img-cover">
+                <img src="koh-rong-sanloem-img/lounge.webp" alt="Onederz Koh Rong Samloem Restaurant" loading="lazy" class="fade-in-item">
+            </div>
+            <div>
+            <h2>Restaurant & Bar</h2>
+            <p>Our on-site restaurant and bar offer convenient and delicious dining experiences. Enjoy your meals and drinks just steps from the beautiful Saracen Bay, with the sea right in front of you.</p>
+        </div>
+        </div>
+        
+        <div class="text-food2">
+            <h3>Open everyday</h3>
+            <h3>From 7:00 AM - 12:00 AM (midnight)</h3>
+            <p>We're delighted to offer convenient and delicious dining experiences right on the beachfront.</p>
+            <h4><strong>Opening Hours & Service</strong></h4>
+            <p>Our kitchens are open every day from 7:00 AM for all-day dining. You can enjoy our full menu, including breakfast, lunch, and dinner, throughout the day. The last food order is at 11:00 PM, and the dining area closes at 12:00 AM (midnight).</p>
+            <div class="food-bg2"></div>
+            <h4><strong>Your Dining Choices</strong></h4>
+            <p>You'll find a diverse menu to satisfy every craving. We offer a delicious selection of Asian and Western dishes, complemented by refreshing fresh shakes and juices, as well as a wide range of soft drinks, cocktails, beer, and wine. We look forward to serving you!</p>
+            <div class="food-bg3"></div>
+        </div>
+    </div>
+</div>
+
+<div class="tour-popup popup">
+    <div class="close-bg">
+        <h2>Explore Koh Rong Samloem</h2>
+        <button class="close-tours">×</button>
+    </div>
+    <div class="tour-ds fade-in-item">
+        <div class="temple-tour">
+        <div class="koh-rong-explore">
+            <h2>Discover What Koh Rong Samloem Offers!</h2>
+            <p>Koh Rong Samloem is a serene island paradise with an abundance of activities and stunning natural beauty. Here's a guide to help you explore during your stay!</p>
+
+            <div class="explore-category">
+                <h3>Beach Hopping & Relaxation</h3>
+                <p>Koh Rong Samloem boasts numerous pristine beaches beyond Saracen Bay. Rent a boat or hike to discover hidden coves and tranquil shores.</p>
+                <ul>
+                    <li>Saracen Bay: Our beautiful home beach, perfect for swimming, relaxation, and stunning sunrises.</li>
+                    <li>Lazy Beach: A serene and picturesque beach on the west side, known for its tranquil vibe and sunsets, accessible by walking trail or boat taxi.</li>
+                    <li>M'Pai Bay: A charming fishing village and backpacker hub on the northern tip, accessible by boat taxi.</li>
+                </ul>
+            </div>
+
+            <div class="explore-category">
+                <h3>Water Activities & Marine Life</h3>
+                <p>The crystal-clear waters surrounding Koh Rong Samloem are perfect for a variety of aquatic adventures.</p>
+                <ul>
+                    <li>Snorkeling & Diving: Explore vibrant coral reefs and diverse marine life. Equipment rentals and tours are widely available from Saracen Bay.</li>
+                    <li>Bioluminescent Plankton Tours: Experience the magical glowing plankton after sunset – a must-do! Tours often depart directly from Saracen Bay.</li>
+                    <li>Kayaking & Paddleboarding: Rent equipment to explore the coastline of Saracen Bay at your own pace.</li>
+                </ul>
+            </div>
+
+            <div class="explore-category">
+                <h3>Jungle Treks & Adventures</h3>
+                <p>For the adventurous, Koh Rong Samloem's interior offers lush jungle trails and exciting attractions.</p>
+                <ul>
+                    <li>Jungle Trekking: Discover trails leading to viewpoints, hidden beaches like Lazy Beach, or the old lighthouse.</li>
+                    <li>Lighthouse Trail: Hike to the old lighthouse for panoramic views of the island and surrounding sea (can be challenging).</li>
+                </ul>
+            </div>
+
+            <div class="explore-category">
+                <h3>Island Nightlife & Dining</h3>
+                <p>Saracen Bay offers a relaxed and friendly atmosphere with beachfront dining and cozy bars.</p>
+                <ul>
+                    <li>Beachfront Dining (Saracen Bay): Enjoy fresh seafood BBQs and international cuisine right on the sand with stunning views.</li>
+                    <li>Beach Bars: Discover a selection of relaxed bars along Saracen Bay for evening drinks and socializing.</li>
+                    <li>M'Pai Bay Evening: For a slightly different vibe, a short boat taxi can take you to M'Pai Bay which has a few relaxed bars and restaurants.</li>
+                </ul>
+            </div>
+
+            <div class="explore-category">
+                <h3>Getting Around the Island</h3>
+                <p>The main way to get between bays on Koh Rong Samloem is by boat taxi, easily arranged at Saracen Bay Pier or through our reception. For shorter distances within Saracen Bay, walking is the primary mode of transport.</p>
+            </div>
+        </div>
+        <div class="koh-rong-tips">
+            <p>Local Tip: For information on boat taxis to other beaches, snorkeling trips, or any island activities, please ask our friendly reception team. They are happy to provide local insights and help you make the most of your Koh Rong Samloem adventure!</p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="contactModal" class="modal-overlay hidden">
+    <div class="contact-modal-content">
+        <div class="contact-modal-content-wrapper">
+            <div class="popup-header">
+            <h2>Contact us</h2>
+            <span class="contact-modal-close-button">&times;</span>
+            </div>
+            <div class="contact">
+            <table>
+                    <tr>
+                        <td>Email</td>
+                        <td> : <a href="mailto:onederzkohrongsanloem@gmail.com">onederzkohrongsanloem@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td> : <a href="tel:+85590200400">+855 90 200 400</a></td>
+                    </tr>
+                </table>
+                <div class="contact-icon">
+                    <a href="https://wa.me/85590200400"    aria-label="Chat on WhatsApp"><img src="../mobile-image/whatsapp.webp" alt=""><p>WhatsApp</p></a>
+                    <a href="https://t.me/+85590200400" aria-label="Chat on Telegram"><img src="../mobile-image/Telegram.webp" alt=""><p>Telegram</p></a>
+                    <a href="https://m.me/onederzkrs" aria-label="Messenger"><img src="../mobile-image/Messenger.webp" alt=""><p>Messenger</p></a>
+                    <a href="https://web.facebook.com/onederzkrs" aria-label="facebook"><img src="../mobile-image/fb-icon.webp" alt=""><p>Facebook</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="locationModal" class="modal-overlay">
+    <div class="location-modal-content">
+        <div class="location-modal-content-wrapper"> 
+            <div class="popup-header">
+            <h2>Our Location</h2>
+            <span class="location-modal-close-button">&times;</span>
+            </div>
+            <div class="location">
+            <p>Onederz Koh Rong Samloem is conveniently located on Saracen Bay, Koh Rong Samloem, just a short walk from the main pier, offering direct beach access and easy arrival.</p>
+        <div class="map-container fade-in-item">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d980.5065039391459!2d103.30991832919797!3d10.577137017846328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3107ef23ffffffe7%3A0xab3cb2bba3bad1af!2sOnederz+Koh+Rong+Sanloem!5e0!3m2!1sen!2skh!4v1553485456614"   class="location-maps"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="goodToKnowModal" class="modal-overlay">
+    <div class="good-to-know-modal-content">
+        <div class="good-to-know-modal-content-wrapper">
+            <div class="popup-header">
+                <h2>Good to know</h2>
+                <span class="goodtoknow-modal-close-button">&times;</span>
+            </div>
+            <div class="goodtoknow">
+                <h3>Getting to Onederz Koh Rong Samloem: Your Island Journey</h3>
+            <p>Onederz Koh Rong Samloem is located directly on Saracen Bay, making it easy to reach from Saracen Bay Pier. Here's how to find us:</p>
+
+            <div class="accordion">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>I. Arriving by Ferry to Saracen Bay Pier</span>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="section-content">
+                    <p>Most ferries from Sihanoukville now offer direct routes to Saracen Bay Pier on Koh Rong Samloem.</p>
+                    <h4>From Saracen Bay Pier:</h4>
+                    <ul>
+                        <li>Distance: Onederz Koh Rong Samloem is just a short walk (approximately 100-200 meters) from Saracen Bay Pier.</li>
+                        <li>How to Get Here:
+                            <ul>
+                                <li>Simply disembark the ferry and walk along Saracen Bay. We are very close by on the main beach.</li>
+                                <li>There are no tuk-tuks or taxis on Koh Rong Samloem. The island is best explored on foot or by boat taxi.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>II. From Other Beaches or Bays on Koh Rong Samloem</span>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="section-content">
+                    <p>If you're arriving from another beach or bay on Koh Rong Samloem (e.g., M'Pai Bay or Lazy Beach), you'll typically need to take a boat taxi to Saracen Bay Pier.</p>
+                    <h4>From Other Locations:</h4>
+                    <ul>
+                        <li>Boat Taxi: Arrange a boat taxi from your current location to Saracen Bay Pier. Prices will vary depending on distance.</li>
+                        <li>Once you arrive at Saracen Bay Pier, follow the directions above.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>General Tips for your arrival:</h3>
+            <ul>
+                <li>No ATMs on Koh Rong Samloem: While some places accept card payments, it's highly recommended to bring sufficient cash (USD is widely accepted) with you from Sihanoukville.</li>
+                <li>Power: Electricity can sometimes be limited or operate on a schedule on certain parts of the island. Our hostel generally has consistent power.</li>
+                <li>Onederz Contact: If you encounter any issues or need directions upon arrival, please don't hesitate to call us directly.</li>
+            </ul>
+            <p>We look forward to welcoming you to Onederz Koh Rong Samloem, your perfect island escape!</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 <script src="booking.js"></script>

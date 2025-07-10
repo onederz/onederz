@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const amenitiesModal = document.getElementById('amenitiesModal');
     const amenitiesLink = document.getElementById('amenities-link'); // Assuming you have a trigger with this ID
-    const closeAmenitiesButton = document.querySelector('#amenitiesModal .fac-modal-close-button '); // Your 'X' button inside amenitiesModal
+    const closeAmenitiesButton = document.querySelector('#amenitiesModal .amenities-modal-close-button '); // Your 'X' button inside amenitiesModal
 
     const contactModal = document.getElementById('contactModal');
     const contactTrigger = document.getElementById('contactTrigger'); // The div you want to click to open it
@@ -514,8 +514,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // NEW: Location Modal elements
     const locationModal = document.getElementById('locationModal');
     const locationLink = document.getElementById('location-link'); // Assuming a trigger with this ID for the location modal
-    const closeLocationButton = document.querySelector('#locationModal .modal-close-button'); // The 'X' button inside locationModal
+    const closeLocationButton = document.querySelector('#locationModal .location-modal-close-button'); // The 'X' button inside locationModal
 
+    const goodToKnowModal = document.getElementById('goodToKnowModal');
+    const goodToKnowLink = document.getElementById('good-to-know-link');
+    const closeGoodToKnowButton = document.querySelector('#goodToKnowModal .goodtoknow-modal-close-button');
 
     // --- Generic Modal Handling Functions ---
     // Function to show a generic modal
@@ -538,6 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (amenitiesModal) amenitiesModal.classList.remove('visible');
     if (contactModal) contactModal.classList.remove('visible');
     if (locationModal) locationModal.classList.remove('visible'); // NEW: Ensure location modal is hidden initially
+    if (goodToKnowModal) goodToKnowModal.classList.remove('visible');
 
 
     // --- Dorm Info Modal Event Listeners ---
@@ -629,7 +633,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    if (goodToKnowLink) {
+        goodToKnowLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showModal(goodToKnowModal);
+        });
+    }
+    if (closeGoodToKnowButton) {
+        closeGoodToKnowButton.addEventListener('click', () => hideModal(goodToKnowModal));
+    }
+    if (goodToKnowModal) {
+        goodToKnowModal.addEventListener('click', (event) => {
+            if (event.target === goodToKnowModal) {
+                hideModal(goodToKnowModal);
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && goodToKnowModal.classList.contains('visible')) {
+                hideModal(goodToKnowModal);
+            }
+        });
+    }
     // --- Other Popups (Room, Tour, Food, etc.) - if you want them to stop body scroll, ensure they also use showModal/hideModal ---
 
     // Room Popup (Assuming this is a separate modal, not related to the main body scroll `roomPopup` variable)
@@ -982,3 +1006,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 }); // End of DOMContentLoaded
+
+
+document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuItems = mobileMenu.querySelectorAll('.header-discover');
+            const overlay = document.getElementById('overlay'); // Get the new overlay element
+            const body = document.body; // Get the body element
+
+            // Function to open the menu
+            function openMenu() {
+                mobileMenu.classList.add('open');
+                overlay.classList.add('active'); // Show overlay
+                body.classList.add('no-scroll'); // Disable scrolling
+                menuToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            // Function to close the menu
+            function closeMenu() {
+                mobileMenu.classList.remove('open');
+                overlay.classList.remove('active'); // Hide overlay
+                body.classList.remove('no-scroll'); // Enable scrolling
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            // Toggle menu open/close
+            menuToggle.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close menu and scroll when a menu item (p tag) is clicked
+            mobileMenuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    closeMenu(); // Close menu
+                    // Get the ID from the clicked paragraph
+                    const targetId = this.id;
+                    if (targetId) {
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking on the overlay or outside of the menu/toggle button
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                const isClickOnOverlay = overlay.contains(event.target); // Check if click is on overlay
+
+                if (mobileMenu.classList.contains('open')) {
+                    // If menu is open and click is on overlay, or outside both menu/toggle
+                    if (isClickOnOverlay || (!isClickInsideMenu && !isClickOnToggle)) {
+                        closeMenu();
+                    }
+                }
+            });
+        });
+
+        function toggleSection(headerElement) {
+            const content = headerElement.nextElementSibling;
+            const arrow = headerElement.querySelector('.arrow');
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                headerElement.classList.remove('active');
+            } else {
+                
+                content.style.display = "block";
+                headerElement.classList.add('active');
+            }
+        }

@@ -416,12 +416,12 @@ function initMobileDropdown(checkFormValidityRef) {
     const dropdownOptions = dropdown.querySelector('.dropdown-options');
 
     // Set Siem Reap as default selected option
-    const siemReapOption = dropdown.querySelector('.dropdown-options li[data-value="siem-reap"]');
+    const siemReapOption = dropdown.querySelector('.dropdown-options li[data-value="koh-rong-samloem"]');
     
     if (siemReapOption) {
         selectedText.textContent = siemReapOption.textContent;
         selectedText.style.color = '#000';
-        hiddenInput.value = "siem-reap";
+        hiddenInput.value = "koh-rong-samloem";
         options.forEach(opt => opt.classList.remove('selected'));
         siemReapOption.classList.add('selected');
     } else {
