@@ -685,7 +685,7 @@ footer {
 .top-page-bg {
   top: 0;
   left: 0;
-  background-image: url("../mobile-image/top-page-image-mobile.jpg");
+  background-image: url("../images/top-page-image-mobile.jpg");
   background-size: cover;
   background-position: center;
   /* This line makes the background fixed */

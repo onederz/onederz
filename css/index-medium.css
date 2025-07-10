@@ -23,6 +23,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+    outline: none;
+  &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 html, body {
@@ -57,7 +66,7 @@ p {
   justify-items: center;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 100;
   padding: 0 20px;
@@ -81,16 +90,22 @@ p {
 }
 
 .bg-bar {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  right: 0px;
-  width: 60px;
-  height: 50px;
+  border-radius: 10px;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  height: 60px;
   position: fixed;
-  background-color: #ffffffe3;
-    backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: 0 2px 15px rgba(148, 148, 148, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .bar {
@@ -102,21 +117,24 @@ p {
 }
 
 .nav-menu {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   position: fixed;
-  top: 0px;
+  top: 50%;
+  transform: translateY(-50%);
   left: -255px;
   width: 250px;
-  height: calc(100% - 0px);
-  background-color: #f4f4f4;
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.452);
+  height: calc(95% - 0px);
+  background-color: #f4f4f4ad;
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.322);
   list-style: none;
   display: flex;
   flex-direction: column;
   padding-top: 15px;
   transition: all 0.5s ease;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .nav-menu.active {
@@ -130,11 +148,13 @@ p {
 }
 
 .nav-links {
-  color: rgb(27, 27, 27);
+  color: rgb(53, 53, 53);
+  border-bottom: 1px solid rgba(199, 199, 199, 0.226);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   display: block;
-  padding: 10px 30px;
+  padding: 12px 30px;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -168,7 +188,7 @@ p {
 .dropdown-menu {
   height: 0;
   width: 100%;
-  background-color: #302f2e;
+  background-color: #0000009f;
   list-style: none;
   padding-left: 20px;
   overflow: hidden;
@@ -188,7 +208,7 @@ p {
 }
 
 .dropdown-link {
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   display: block;
@@ -198,7 +218,7 @@ p {
 
 /* Hamburger animation */
 .menu-toggle.active .bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
 }
 
 .menu-toggle.active .bar:nth-child(2) {
@@ -206,7 +226,7 @@ p {
 }
 
 .menu-toggle.active .bar:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Content shifting */
@@ -226,8 +246,10 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9;
+    background-color: rgba(241, 241, 241, 0.719);
+    backdrop-filter: blur(2px) saturate(100%);
+      -webkit-backdrop-filter: blur(2px) saturate(100%);
+    z-index: 1000;
     display: none;
     transition: opacity 0.3s ease;
 }
@@ -237,8 +259,8 @@ p {
 
 
 #logo {
-  position: absolute;
-  top: 1em;
+  position: fixed;
+  top: 0.6em;
   left: 1em;
   background-image: url("../mobile-image/onederzlogo.webp");
   background-size: contain;
@@ -246,7 +268,7 @@ p {
   background-position: center;
   width: 110px;
   height: 3em;
-  z-index: 9;
+  z-index: 101;
 }
 
 
@@ -265,12 +287,11 @@ p {
 #section1 {
   display: block;
   align-items: center;
-  height: 70svh;
+  aspect-ratio: 1.5;
+  margin-top: 65px;
   padding: 30px;
-  opacity: 1;
-  transform: translateY(0);
   border-bottom: none;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* Section5 should always be visible */
@@ -278,6 +299,7 @@ p {
   width: 100%;
   opacity: 1;
   transform: none;
+  padding: 10px;
 }
 
 
@@ -324,18 +346,23 @@ p {
   position: relative;
 }
 
-
-.onederz-social {
-  width: 100%;
-  padding: 0;
+.bg-section2 {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.wrap-font {
+  display: block;
 }
 
-.onederz-social h3 {
+.onederz-social {
+  border-radius: 10px;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  color: rgb(35, 39, 39);
-  font-size: 1.2em;
+  padding: 10px;
+  background-color: #201f1f;
+}
+.onederz-social h3 {
+  color: rgb(240, 240, 240);
+  font-size: 1.1em;
   font-weight: 400;
   padding: 20px 10px 25px 10px;
   text-align: center;
@@ -343,10 +370,16 @@ p {
 }
 
 .onederz-social h2 {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  color: rgb(41, 39, 39);
   text-align: center;
-  margin-top: 70px;
+  padding: 10px 0;
 }
 
+.core-vibe {
+  display: none;
+}
 
 .section2 h1 {
   cursor: default;
@@ -412,6 +445,7 @@ footer {
 }
 
 .bg-section5 {
+  border-radius: 10px;
   background-color: #151616;
   width: 100%;
   height: 100%;
@@ -439,39 +473,50 @@ footer {
 
 .character-container {
     margin: 30px auto;
-    max-width: 1200px;
+    max-width: 400px;
     display: flex;
-    justify-items: center;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 10px;
-    height: 220px;
+    height: 350px;
     gap: 0px;
     box-sizing: border-box;
 }
 
 
 .character-img {
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 120px;
-    height: 180px;
+
+    width: calc(50% - 0px - 0px);
+    height: calc(50% - 0px - 0px);
+    flex: none;
     position: relative;
+    background-position: center top 30px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #333;
 }
 
 /* Specific image styles for each box */
 .sleep {
     background-image: url("../mobile-image/sleep.webp");
     background-size: 110px;
+    border-right: 1px dotted rgba(39, 39, 39, 0.493);
+    border-bottom: 1px dotted rgba(39, 39, 39, 0.493);
 }
 
 .eat {
     background-image: url("../mobile-image/eat.webp");
     background-size: 110px;
+    border-bottom: 1px dotted rgba(39, 39, 39, 0.493);
 }
 
 .drink {
     background-image: url("../mobile-image/drink.webp");
     background-size: 70px;
+    border-right: 1px dotted rgba(39, 39, 39, 0.493);
 }
 
 .enjoy {
@@ -496,12 +541,12 @@ footer {
 /* what we have */
 
 .we-have {
-    padding: 40px 10px 10px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 40px 10px 10px 10px;
 }
 
 .we-have-cover {
@@ -509,10 +554,19 @@ footer {
   position: relative;
   display: flex;
   margin: 10px auto;
-  box-shadow: 1px 1px 5px rgba(87, 87, 87, 0.247);
+  border-radius: 10px;
   transition: scale 0.5s ease-in-out 0.5s;
   cursor: pointer;
   scale: 1;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
@@ -536,6 +590,8 @@ footer {
 }
 
 .we-have-img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     width: 120px;
     height: 150px;
     position: relative;
@@ -563,6 +619,7 @@ footer {
 }
 
 .dc-more {
+  border-radius: 10px;
   font-size: 0.85em;
   position: absolute;
   right: 5px;
@@ -592,23 +649,45 @@ footer {
 .box-container {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
-  gap: 10px;
+  max-width: 700px;
+  gap: 20px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   padding: 0 5px;
 }
 
+.box-container >.box-1,.box-2, .box-3, .box-4, .box-5, .box-6 {
+  flex: 0 1 calc(50% - 10px);
+}
+@media (max-width: 468px) { 
+  .box-container > .box-1, 
+  .box-container > .box-2, 
+  .box-container > .box-3, 
+  .box-container > .box-4, 
+  .box-container > .box-5, 
+  .box-container > .box-6 {
+    flex: 0 1 calc(95% - 2px);
+    margin: 5px auto;
+  }
+  
+}
 
 /* Optional: Styling for boxes */
 .box {
-  width: 300px;
+  display: block; /* Make the anchor behave like a block-level div */
+  text-decoration: none; /* Remove the default underline */
+  color: inherit; /* Inherit text color from parent, or set a specific color */
   cursor: pointer;
   position: relative;
-  height: 230px;
+  height: 200px; /* Or whatever height you need */
   transition: scale 0.5s ease;
   scale: 1;
+
+  /* Add any other styling for your box like border, background, padding, etc. */
+  /* For example: */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 8px; */
+  /* overflow: hidden; */
 }
 
 .box:active {
@@ -617,47 +696,63 @@ footer {
 
 
 .box-img {
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.308);
 }
 
 .box1 {
   background-image: url("../mobile-image/go-to-siemreap-square.webp");
+  background-position: center;
 }
 
 .box2 {
   background-image: url("../mobile-image/go-to-phnom-penh-square.webp");
+  background-position: center;
 }
 
 .box3 {
   background-image: url("../mobile-image/go-to-kampot-square.webp");
+  background-position: center;
 }
 
 .box4 {
   background-image: url("../mobile-image/go-to-sihanoukville.webp");
+  background-position: bottom center;
 }
 
 .box5 {
   background-image: url("../mobile-image/go-to-koh-rong-sanloem-square.webp");
+  background-position: center;
 }
 
 .box6 {
   background-image: url("../mobile-image/go-to-koh-rong-square.webp");
+  background-position: bottom center;
 }
 
 .box .descripe-box {
+  border-radius: 10px;
   position: absolute;
   margin: 0 auto;
-  bottom: 5px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 95%;
-  height: 20%;
+  height: 25%;
   padding: 5px 10px;
-  color: rgb(0, 0, 0);
-  background-color: #f4f4f4;
+  color: rgb(24, 23, 23);
+  background: #f4f4f4c7;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .descripe-box h3{
@@ -700,20 +795,21 @@ footer {
 }
 
 .top-page-bg-mobile {
-  top: 0;
-  left: 0;
-  background: 
-    linear-gradient(180deg,rgba(255, 255, 255, 0.863) 0%, rgba(0, 0, 0, 0.336) 50%, rgba(255, 255, 255, 0) 100%),
-    url("../mobile-image/top-page-image-2.webp")  center/cover; 
+  border-radius: 10px;
+  top: 73px;
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 1.5;
+  background: url("../mobile-image/top-page-image-2.webp"); 
+  background-size: cover;
+  background-position: center;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 97%;
 }
 
 .top-page-title {
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 250px;
+  left: 0;
   position: absolute;
   margin: 0 auto;
   display: flex;
@@ -730,7 +826,7 @@ footer {
   color: rgb(255, 255, 255);
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.247);
   font-size: 3.5em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #section4 {
@@ -749,7 +845,7 @@ footer {
 
 
 .mobile-book-btn {
-      width: 90%;
+      width: 93%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -757,21 +853,25 @@ footer {
       bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(140deg, #19191a 30%, #262727 50%, #19191a 70%);
+      background: linear-gradient(140deg, #d1d1d15b 30%, #ffffff57 50%, #d1d1d15b 70%);
       background-size: 400%;
-      backdrop-filter: blur(2px) saturate(100%);
-      -webkit-backdrop-filter: blur(2px) saturate(100%);
-      color: white;
-      border: 1px solid rgba(247, 247, 247, 0.151);
+      color: #333;
       padding: 20px 5px;
-      border-radius: 5px;
+      border-radius: 10px;
       font-weight: bold;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      font-size: 1em;
       z-index: 999;
       cursor: pointer;
       animation: pulse 2s infinite linear;
+      box-shadow:
+                  0 4px 20px rgba(0, 0, 0, 0.1),
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                  inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      isolation: isolate;
+      border: 1px solid rgba(255, 255, 255, 0.692);
     }
-
     .mobile-book-btn img {
       position: absolute;
       width: 30px;
@@ -821,7 +921,7 @@ footer {
       width: 40px;
       height: 40px;
       border: none;
-      font-size: 25px;
+      font-size: 1em;
       font-weight: 500;
       cursor: pointer;
       position: absolute;
@@ -998,7 +1098,9 @@ footer {
     .booking-form-mobile .selected-text {
       color: #777;
       margin: 0 auto;
+      font-weight: 500;
     }
+
     .dropdown-arrow {
     display: inline-block;
     margin-left: 8px;
@@ -1006,7 +1108,7 @@ footer {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid rgb(26, 26, 26);
+    border-top: 5px solid rgb(77, 77, 77);
     vertical-align: middle;
     transition: transform 0.3s ease;
 }
@@ -1030,11 +1132,23 @@ footer {
       background: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .booking-form-mobile .custom-dropdown-mobile.open .dropdown-options {
       display: block;
+      animation: floatlist 0.3s ease;
     }
+
+    @keyframes floatlist {
+      from {
+        transform: translateY(10%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+
 
     .booking-form-mobile .custom-dropdown-mobile.open .dropdown-arrow {
       transform: rotate(180deg);
@@ -1060,18 +1174,29 @@ footer {
     #submitBtnMobile {
   width: 100%;
   padding: 12px;
-  background: #8daeb8;
+  background: linear-gradient(140deg, #363535 30%, #5e5b5b 50%, #363535 70%);
+  background-size: 400%;
   color: white;
-  border: none;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
   transition: all 0.3s ease;
+  animation: shimmer 2s infinite linear;
+      box-shadow:
+                  0 4px 20px rgba(0, 0, 0, 0.1),
+                  inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                  inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      isolation: isolate;
+      border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #submitBtnMobile:disabled {
+  border: none;
+  box-shadow: none;
   background: #cccccc;
   cursor: not-allowed;
   opacity: 0.7;
@@ -1093,8 +1218,8 @@ footer {
   z-index: 1000;
   display: flex;
   gap: 10px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .month-year-selector select {
@@ -1102,7 +1227,7 @@ footer {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 1em;
     width: 33.6%;
 
     /* --- ADD THESE PROPERTIES FOR IOS COMPATIBILITY --- */
@@ -1134,10 +1259,12 @@ select {
 
 .month-year-selector button {
   width: 30%;
-  padding: 13.5px 30px;
-  background: #8dacb8;
+  height: 100%;
+  padding: 10px 30px;
+  font-size: 1em;
+  border: 1px solid #383a3b;
+  background: #383a3b;
   color: white;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
@@ -1157,17 +1284,16 @@ select {
 
 
 #contact-form {
-    z-index: 4;
-    padding: 1rem;
-    width: 350px;
+    z-index: 1001;
+    padding: 80px 10px;
+    width: 100%;
     position: fixed;
-    right: 0.5em;
-    bottom: 0.5em;
-    background: linear-gradient(74deg, rgba(207, 207, 207, 0.877) 0%, rgba(218, 218, 218, 0.705) 100%);
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgb(250, 244, 228) 0%, rgb(241, 241, 240) 100%);
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
-    height: 410px;
-    border-radius: 5px;
+    height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0; /* Start fully transparent */
     visibility: hidden; /* Hide the element */
@@ -1183,10 +1309,8 @@ select {
 
 
 .contact-send {
-    left: 1em;
+    margin-top: 20px;
     z-index: 1;
-    position: absolute;
-    bottom: 0.5em;
     font-size: 1em;
     font-weight: 500;
     color: #f0f0f0;
@@ -1215,7 +1339,7 @@ select {
     padding-left: 10px;
     border-radius: 5px;
     height: 30px;
-    width: 200px;
+    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -1235,10 +1359,10 @@ textarea::placeholder {
   }
 
 #close-form {
-    right: -0.2em;
+    right: 5px;
     z-index: 1;
     position: absolute;
-    top: -0.2em;
+    top: 5px;
     font-size: 1em;
     font-weight: bold;
     color: #ffffff;
@@ -1265,8 +1389,8 @@ textarea::placeholder {
 #contact-form textarea {
     border-radius: 5px;
     padding: 10px;
-    width: 320px;
-    height: 200px;
+    width: 100%;
+    height: 250px;
     border: none;
 }
 
