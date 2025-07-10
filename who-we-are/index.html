@@ -5,34 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onederz - Who We Are</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@465&family=Montserrat:ital,wght@0,100..900;1,100..900&family=National+Park:wght@200..800&display=swap');
-
-body {
-  font-style: normal;
-  font-optical-sizing: auto;
-  font-size: 0.9em;
-  font-weight: 500;
-  scroll-behavior: smooth;
-  line-height: 1.6;
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 body,
 input,
 textarea,
 button,
 select {
-  font-family: "Montserrat", sans-serif;
-}
-        .navigation-pc {
-  position: absolute;
-  z-index: 10;
-  height: 4em;
-  background-color: #ffffff00;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  font-family: "Manrope", sans-serif;
 }
 
-.navigation-pc a {
-  transition: color 0.3s ease; /* Smooth transition for links */
+html {
+    scrollbar-width: none;
+}
+
+body {
+  font-style: normal;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 .navbar {
@@ -45,7 +36,7 @@ select {
   justify-items: center;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 100;
   padding: 0 20px;
@@ -69,42 +60,50 @@ select {
 }
 
 .bg-bar {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  right: 0px;
+  border-radius: 10px;
+  top: 5px;
+  right: 5px;
   width: 60px;
-  height: 50px;
+  height: 60px;
   position: fixed;
-  background-color: #ffffffb6;
-    backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .bar {
-  height: 4px;
+  height: 3px;
   width: 100%;
-  background-color: #181818;
-  border-radius: 3px;
+  background-color: #333;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 .nav-menu {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   position: fixed;
-  top: 0px;
+  top: 50%;
+  transform: translateY(-50%);
   left: -255px;
   width: 250px;
-  height: calc(100vh - 0px);
-  background-color: #fffae5de;
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.452);
+  height: calc(95% - 0px);
+  background-color: #f4f4f4ad;
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.322);
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
+  padding-top: 15px;
   transition: all 0.5s ease;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .nav-menu.active {
@@ -118,11 +117,13 @@ select {
 }
 
 .nav-links {
-  color: rgb(0, 0, 0);
+  color: rgb(53, 53, 53);
+  border-bottom: 1px solid rgba(199, 199, 199, 0.226);
   text-decoration: none;
   font-size: 1.1rem;
+  font-weight: 500;
   display: block;
-  padding: 15px 30px;
+  padding: 12px 30px;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -148,7 +149,7 @@ select {
 }
 
 .nav-links:hover {
-  color: #5f5818;
+  color: #747371;
   background-color: rgba(194, 182, 182, 0.363);
 }
 
@@ -156,7 +157,7 @@ select {
 .dropdown-menu {
   height: 0;
   width: 100%;
-  background-color: #ac98639f;;
+  background-color: #0000009f;
   list-style: none;
   padding-left: 20px;
   overflow: hidden;
@@ -169,8 +170,7 @@ select {
 
 /* Always show dropdown items (remove opacity animation) */
 .dropdown-item {
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.63);
+  font-size: 1em;
   /* Remove transform and opacity animations */
   transform: translateY(0) !important;
   opacity: 1 !important;
@@ -184,14 +184,10 @@ select {
   transition: color 0.3s ease-in-out, padding 0.3s ease;
 }
 
-.dropdown-link:hover {
-  color: #000000;
-  padding: 12px 2px 12px 30px;
-}
 
 /* Hamburger animation */
 .menu-toggle.active .bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
 }
 
 .menu-toggle.active .bar:nth-child(2) {
@@ -199,7 +195,7 @@ select {
 }
 
 .menu-toggle.active .bar:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Content shifting */
@@ -219,36 +215,14 @@ select {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9;
+    background-color: rgba(241, 241, 241, 0.719);
+    backdrop-filter: blur(2px) saturate(100%);
+      -webkit-backdrop-filter: blur(2px) saturate(100%);
+    z-index: 1000;
     display: none;
     transition: opacity 0.3s ease;
 }
 
-
-.logo-wd {
-  position: absolute;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  transition: all 0.3s ease;
-  z-index: 101;
-}
-
-
-#logo {
-  position: absolute;
-  top: 1em;
-  left: 1em;
-  background-image: url("../mobile-image/onederzlogo.webp");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 110px;
-  height: 3em;
-  z-index: 9;
-}
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #e74c3c;
@@ -274,7 +248,7 @@ select {
         /* Hero Section */
         .hero-section {
             height: 100svh;
-            background: linear-gradient(rgba(17, 17, 17, 0.555), rgba(0, 0, 0, 0.4)), 
+            background: linear-gradient(rgba(56, 54, 54, 0.555), rgba(0, 0, 0, 0.4)), 
                         url('../mobile-image/who-we-are.webp') no-repeat bottom left/cover;
             display: flex;
             align-items: center;
@@ -363,7 +337,7 @@ select {
         .about-image {
             flex: 1;
             min-width: 300px;
-            height: 400px;
+            aspect-ratio: 1.5;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -555,15 +529,8 @@ select {
     </style>
 </head>
 <body>
-        <header>
-        <div class="navigation-pc">
-        <div id="navigation-large">
-
-            <a href="../index.html"><div class="logo-wd">
-                <div id="logo"></div>
-            </div></a>
-
-        <nav class="navbar">
+<div class="navigation-mobile">
+                <nav class="navbar">
             <div class="bg-bar"></div>
             <div class="menu-toggle" id="menu">
                 <span class="bar"></span>
@@ -572,49 +539,38 @@ select {
             </div>
         </nav>
         
-        <ul class="nav-menu" id="nav-menu">
+        <ul class="nav-menu mobile" id="nav-menu">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-links">Home</a>
+            </li>
             <li class="nav-item">
                 <a href="#" class="nav-links has-dropdown">Destinations</a>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="../siem-reap/index.html" class="dropdown-link">Siem Reap</a></li>
-                    <li class="dropdown-item"><a href="../phnom-penh/index.html" class="dropdown-link">Phnom Penh</a></li>
-                    <li class="dropdown-item"><a href="../kampot/index.html" class="dropdown-link">Kampot</a></li>
-                    <li class="dropdown-item"><a href="../sihanoukville/index.html" class="dropdown-link">Sihanoukville</a></li>
-                    <li class="dropdown-item"><a href="../koh-rong-sanloem/index.html" class="dropdown-link">Koh Rong Sanloem</a></li>
-                    <li class="dropdown-item"><a href="../koh-rong/index.html" class="dropdown-link">Koh Rong</a></li>
+                    <li class="dropdown-item"><a href="siem-reap/index.html" class="dropdown-link">Siem Reap</a></li>
+                    <li class="dropdown-item"><a href="phnom-penh/index.html" class="dropdown-link">Phnom Penh</a></li>
+                    <li class="dropdown-item"><a href="kampot/index.html" class="dropdown-link">Kampot</a></li>
+                    <li class="dropdown-item"><a href="sihanoukville/index.html" class="dropdown-link">Sihanoukville</a></li>
+                    <li class="dropdown-item"><a href="koh-rong-sanloem/index.html" class="dropdown-link">Koh Rong Sanloem</a></li>
+                    <li class="dropdown-item"><a href="koh-rong/index.html" class="dropdown-link">Koh Rong</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="../who-we-are/index.html" class="nav-links">About us</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-links has-dropdown">Experience</a>
+                <a href="#" class="nav-links has-dropdown">Contact</a>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Siem Reap</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Phnom Penh</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-links">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-links has-dropdown">Booking</a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Siem Reap</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Phnom Penh</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Kampot</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Sihanoukville</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Koh Rong Sanloem</a></li>
-                    <li class="dropdown-item"><a href="#" class="dropdown-link">Koh Rong</a></li>
-                </ul>
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-siem-reap" class="dropdown-link">Siem Reap</a></li>
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-phnom-penh" class="dropdown-link">Phnom Penh</a></li>
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-kampot" class="dropdown-link">Kampot</a></li>
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-shv" class="dropdown-link">Sihanoukville</a></li> 
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-krs" class="dropdown-link">Koh Rong Sanloem</a></li> 
+                        <li class="dropdown-item"><a href="#" data-modal-target="contactModal-kr" class="dropdown-link">Koh Rong</a></li> 
+                    </ul>
             </li>
         </ul>
-        </div>
     </div>
-    </header>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
+            <div><img src="../mobile-image/onederzlogo.webp" alt="" width="100%"></div>
             <h1>Who We Are</h1>
             <p>Creating wonderful travel memories through exceptional Onederz experiences</p>
         </div>
