@@ -5,12 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // *** MODIFIED THIS LINE ***
     const elementsToAnimate = document.querySelectorAll(
         '.top-page-title h1, ' +
-        '.onederz-social, ' +
-        '.onederz-social h2, ' +
-        '.onederz-social h3, ' +
-        '.character-container, ' + // Now targeting the character-container
+        '.top-page-title h3, ' +
         '.destination, ' +
-        '.box, ' +          // This will select all individual destination boxes
+        '.box h2, .box h4, .box p, ' +          // This will select all individual destination boxes
         '#section4 .section4, ' + // The text content block in section 4
         '#section4 .we-have-cover'    // The image container in section 4
     );
