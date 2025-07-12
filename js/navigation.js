@@ -209,15 +209,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Navigation Bar Background Logic ---
-    const mainNavElement = document.getElementById('mainNavigation');
+    const mainNavElement = document.getElementById('mainNavigation'); // Your PC nav
     const navScrollThreshold = 50; // Number of pixels to scroll before background appears
 
+    // --- Navigation Bar Background Logic (Mobile) ---
+    const mobileNavBgElement = document.querySelector('.bg-bar'); // Get your mobile nav background
+    // You can use the same navScrollThreshold or a different one for mobile
+    // const mobileNavScrollThreshold = 50; // Example if you want a different threshold
+
     const updateMainNavBackground = () => {
+        // PC Navigation Background
         if (mainNavElement) {
             if (window.scrollY > navScrollThreshold) {
                 mainNavElement.classList.add('scrolled');
             } else {
                 mainNavElement.classList.remove('scrolled');
+            }
+        }
+
+        // Mobile Navigation Background (bg-bar)
+        if (mobileNavBgElement) {
+            // Use the same threshold as PC, or mobileNavScrollThreshold if defined
+            if (window.scrollY > navScrollThreshold) {
+                mobileNavBgElement.classList.add('scrolled'); // Add 'scrolled' class to mobile nav
+            } else {
+                mobileNavBgElement.classList.remove('scrolled');
             }
         }
     };
