@@ -761,7 +761,7 @@ justify-items: center;
   top: 0;
   background: 
     linear-gradient(180deg,rgba(34, 34, 34, 0.459) 0%, rgba(0, 0, 0, 0.534) 100%),
-    url("../mobile-image/top-page-image-mobile.jpg") center/cover; 
+    url("../mobile-image/top-page-image-mobile.webp") center/cover; 
   position: absolute;
   width: 100svw;
   height: 100svh;
