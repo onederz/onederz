@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let scrollY = 0;
     const lockScroll = () => {
         scrollY = window.scrollY;
-        document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollY}px`;
         document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden'; // Explicitly hide overflow
     };
     
     const unlockScroll = () => {
-        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow'); // Remove overflow property
         document.body.style.removeProperty('position');
         document.body.style.removeProperty('top');
         document.body.style.removeProperty('width');
@@ -86,10 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.remove('active');
         overlay.style.opacity = '0';
         
-        setTimeout(() => {
+        // Use a transitionend event listener on the overlay instead of a fixed setTimeout
+        // to ensure unlockScroll happens after the overlay visually disappears.
+        overlay.addEventListener('transitionend', function handler() {
             overlay.style.display = 'none';
             unlockScroll();
-        }, 300);
+            overlay.removeEventListener('transitionend', handler); // Remove listener after execution
+        }, { once: true }); // Ensure the listener is removed after it runs once
+        
+        // Fallback for browsers that don't support transitionend or if opacity is 0 initially
+        if (parseFloat(overlay.style.opacity) === 0) {
+            overlay.style.display = 'none';
+            unlockScroll();
+        }
     };
 
     const closeAll = () => {
@@ -114,8 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event Delegation
     overlay.addEventListener('click', closeAll);
     document.addEventListener('click', (e) => {
+        // Only close dropdowns if click is outside nav-menu and not on the menu toggle itself
         if (!e.target.closest('.nav-menu') && !e.target.closest('.menu-toggle')) {
             closeAllDropdowns();
+            // Add a check to close the main menu if clicked outside
+            if (navMenu.classList.contains('active') && !e.target.closest('#nav-menu')) {
+                 closeMenu(); // Close the menu if active and clicked outside
+            }
         }
     });
 
@@ -213,9 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navScrollThreshold = 50; // Number of pixels to scroll before background appears
 
     // --- Navigation Bar Background Logic (Mobile) ---
-    const mobileNavBgElement = document.querySelector('.bg-bar'); // Get your mobile nav background
-    // You can use the same navScrollThreshold or a different one for mobile
-    // const mobileNavScrollThreshold = 50; // Example if you want a different threshold
+    const mobileNavBgElement = document.querySelector('.bg-bar'); // Your mobile nav background
+
+    // --- Mobile Book Button Logic ---
+    const mobileBookButton = document.querySelector('.main-mobile-book-btn');
+
+    const branchName = document.querySelector('.branch-name');
 
     const updateMainNavBackground = () => {
         // PC Navigation Background
@@ -229,11 +246,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mobile Navigation Background (bg-bar)
         if (mobileNavBgElement) {
-            // Use the same threshold as PC, or mobileNavScrollThreshold if defined
             if (window.scrollY > navScrollThreshold) {
-                mobileNavBgElement.classList.add('scrolled'); // Add 'scrolled' class to mobile nav
+                mobileNavBgElement.classList.add('scrolled');
             } else {
                 mobileNavBgElement.classList.remove('scrolled');
+            }
+        }
+
+        // Mobile Book Button
+        if (mobileBookButton) {
+            // You can use the same navScrollThreshold or a different one for the button
+            if (window.scrollY > navScrollThreshold) {
+                mobileBookButton.classList.add('scrolled'); // Add 'scrolled' class to the button
+            } else {
+                mobileBookButton.classList.remove('scrolled');
+            }
+        }
+
+        // BrachName
+        if (branchName) {
+            
+            if (window.scrollY > navScrollThreshold) {
+                branchName.classList.add('scrolled'); // Add 'scrolled' class to the button
+            } else {
+                branchName.classList.remove('scrolled');
             }
         }
     };
